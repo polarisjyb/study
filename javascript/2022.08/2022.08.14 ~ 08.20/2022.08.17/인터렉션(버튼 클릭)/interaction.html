@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="root">
+    <div id="pop-up">
+
+      <h1>HELLO</h1>
+
+      <p>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      </p>
+    
+      <button>close</button>
+    </div>
+    <div id="circle">
+      <div></div>
+    </div>
+  </div>
+
+  <script>
+
+    console.log(window.document.getElementById('pop-up'));
+
+    let popup = window.document.getElementById('pop-up');
+
+    console.log(popup);
+
+
+    console.log(window.document.getElementById('pop-up').children[2]);
+
+    let button = window.document.getElementById('pop-up').children[2];
+
+    console.dir(button);
+
+
+    button.addEventListener('click', function() {
+      popup.style.display = 'none';
+    });
+
+  </script>
+</body>
+</html>

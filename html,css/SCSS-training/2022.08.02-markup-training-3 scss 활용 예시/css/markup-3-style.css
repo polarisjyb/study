@@ -1,0 +1,103 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 
+  간단하게 색깔 '값'만 지정한 변수이다.
+  위와 같은 색깔의 경우 디자인요청 및 클라이언트 요청등등 여러가지 '변경의 여지' 가능성이 상당히 높기때문에
+  직접 값을 작성하는(리터럴이라부른다) 방식보다, 비록 손이 조금더 가지만 위처럼 작성하는 것이 유지보수 관점에서
+  매우 압도적인 성능을 발휘할 수 있다.
+
+  변할여지가 있는 것이라면 모두 변수로 제어하는 연습이 필요하다.
+*/
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+  color: #ccc;
+}
+#root > header {
+  width: inherit;
+  height: 5vh;
+  background-color: #222;
+  padding: 1vw;
+  /* 
+    소괄호에 작명하는 변수이름은 제작자가 확인하기 좋은 방식으로 처리하는 것이 옳다. 
+    예를 들어 $zero 라는 변수는 아래의 justify-content 속성의 값으로서만 사용하는 것이기 때문에
+
+    다른 작성부분에서, $zero라는 의미는 아무런 의미가 존재하지 않는다.
+
+    따라서 첫번째 자리 변수, 두번째 자리 변수로 익히는 것이 좋고
+    이해를 돕기위해 '잘못된 작성법'을 위에 사용했다.
+    잘못된 예시이므로 직관적인 이름을 사용하는 것으로 연습해보면서
+    변수의 생명이 어디까지 존재하는지 확인하면서 점쳐본다.
+
+  */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+}
+#root > header > ul {
+  width: 50vw;
+  height: 50vh;
+  padding: 1vw;
+  position: absolute;
+  top: 1vw;
+  background-color: #fff;
+  /* 
+    소괄호에 작명하는 변수이름은 제작자가 확인하기 좋은 방식으로 처리하는 것이 옳다. 
+    예를 들어 $zero 라는 변수는 아래의 justify-content 속성의 값으로서만 사용하는 것이기 때문에
+
+    다른 작성부분에서, $zero라는 의미는 아무런 의미가 존재하지 않는다.
+
+    따라서 첫번째 자리 변수, 두번째 자리 변수로 익히는 것이 좋고
+    이해를 돕기위해 '잘못된 작성법'을 위에 사용했다.
+    잘못된 예시이므로 직관적인 이름을 사용하는 것으로 연습해보면서
+    변수의 생명이 어디까지 존재하는지 확인하면서 점쳐본다.
+
+  */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+#root > header > ul > li {
+  color: #333;
+  height: 5vh;
+}
+#root > main {
+  width: inherit;
+  height: 95vh;
+  background-color: #111;
+  /* 
+    소괄호에 작명하는 변수이름은 제작자가 확인하기 좋은 방식으로 처리하는 것이 옳다. 
+    예를 들어 $zero 라는 변수는 아래의 justify-content 속성의 값으로서만 사용하는 것이기 때문에
+
+    다른 작성부분에서, $zero라는 의미는 아무런 의미가 존재하지 않는다.
+
+    따라서 첫번째 자리 변수, 두번째 자리 변수로 익히는 것이 좋고
+    이해를 돕기위해 '잘못된 작성법'을 위에 사용했다.
+    잘못된 예시이므로 직관적인 이름을 사용하는 것으로 연습해보면서
+    변수의 생명이 어디까지 존재하는지 확인하면서 점쳐본다.
+
+  */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: row;
+  padding: 5vw;
+}
+#root > main > section > h1 {
+  font-size: 10rem;
+}
+#root > main > section > p {
+  width: 50vw;
+}/*# sourceMappingURL=markup-3-style.css.map */

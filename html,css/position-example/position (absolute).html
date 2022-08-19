@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+*   {
+      box-sizing: border-box;
+    }
+
+    body {
+      color :#181818;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+
+    .parent {
+      border: 1px solid #181818;
+      background: skyblue;
+      padding: 20px;
+      width: 500px;
+    }
+
+    .child {
+      border: 3px dotted #181818;
+      background: pink;
+      padding: 20px;
+    }
+
+    .parent > .child:nth-child(2) {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="parent">
+  Parent Container
+  <div class="child">
+    Child 1 
+  </div>
+  <div class="child abs">
+    Child 2
+  </div>
+</div>
+</body>
+</html>

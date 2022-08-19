@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+  <script>
+
+    let colorSet = ["salmon","cadetblue", "chocolate", "coral", "cornflowerblue", "pink"];
+
+    console.log(colorSet);
+
+    let a;
+    a = document.getElementById("root");
+
+    let count = 0;
+
+    for(let index = 0; index < colorSet.length; index = index + 1) {
+      a.children[index].style.backgroundColor = colorSet[index];
+    }
+
+    //반복문 for
+    // 변수 선언문, 조건문, 
+
+
+  </script>
+</body>
+</html>

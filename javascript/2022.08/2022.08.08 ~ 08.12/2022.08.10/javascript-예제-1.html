@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    let studentList = [
+      "강예훈",
+      "김성현",
+      "류주완",
+      "마근원",
+      "문예찬",
+      "박종인",
+      "박재형",
+      "송형주",
+      "양상희",
+      "원두진",
+      "유민호",
+      "이상호",
+      "이소영",
+      "이은수",
+      "정동욱",
+      "정윤환",
+      "정정원",
+      "지영빈",
+      "한용준",
+      "황초영",
+      "김근수",
+      "김승현",
+      "김지애",
+      "전형민",
+      "정연주",
+      "이아연",
+      "최화연",
+      "한가람"
+    ]
+
+    console.log(studentList);
+    
+    
+
+    for(let i = 0; i < studentList.length; i++) {
+      if(studentList[i] === "지영빈") {
+        console.log(`지영빈님은${i+1}번째에 있습니다.`);
+      }
+    }""
+
+    
+
+    for(let i = 0; i < studentList.length; i++) {
+      if(studentList[i] === "토레타") {
+        console.log(`${i + 1}번째에 없습니다.`);
+      }
+      else {
+        console.log("목록 어디에도 없습니다.");
+      }
+    }
+
+    for(let i = 0; i < studentList.length; i++) {
+      if(studentList[i] === "강예훈") {
+        console.log("강예훈님은" + (i + 1) + "번째에 있습니다.");
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

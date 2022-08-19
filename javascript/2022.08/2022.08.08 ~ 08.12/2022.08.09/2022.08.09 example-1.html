@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button onclick="alert('메롱')">click</button>
+    <!-- <button> 태그에 자바스크립트를 사용했다.
+    "버튼 엘리먼트노드에 클릭 이벤트를 인라인으로 작성했다.
+    위치는 attribute 노드이다"
+
+    attribute 노드는 onclick을 가지고 있다.
+    text 노드는 click을 가지고 있다. -->
+
+  <script>
+    const button = document.querySelector('button')
+    button.addEventListener('click', function() {
+      alert('메메롱');
+    })
+  </script>
+  <!-- trigger : event (이벤트) "어떤 일이 일어났다", "이벤트 발생" -->
+</body>
+</html>

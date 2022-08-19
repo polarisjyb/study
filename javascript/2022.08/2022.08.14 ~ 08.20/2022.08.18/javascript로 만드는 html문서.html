@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+
+  </div>
+
+  <script>
+
+    function flexSetting(element, direction='row') {
+      if(typeof(direction) === 'string') {
+        element.style.display = 'flex';
+        element.style.justifyContent = 'center';
+        element.style.alignItems = 'center';
+        element.style.flexDirection = direction;
+      } else {
+        console.log('type check');
+      }
+    }
+    
+    // console.log(flexSetting);
+    // 함수 flexSetting가 제대로 선언되었는지 검사합니다. 
+    // 만약 flexDirection = direction의 값이 '문자열' 이면 {} 기능을 실행
+    /* 왜 조건을 flexDirection = direction 의 값이 '문자열'이라고 설정했을까? 
+      '문자열' 이 아닌 경우에는 어떻게 될까?
+      값이 '문자열' 밖에 없어서 조건으로 제시한 걸까?
+    */
+
+    function widthAndHeight(element, width, height) {
+      element.style.width = width;
+      element.style.height = height;
+    }
+    // console.log(widthAndHeight);
+
+    function backgroundColor(element, backgroundColor) {
+      element.style.backgroundColor = backgroundColor;
+    } 
+    // console.log(backgroundColor);
+
+    function resetStyle(element, margin, padding, boxSizing) {
+      element.style.margin = margin;
+      element.style.padding = padding;
+      element.style.boxSizing = boxSizing;
+    }
+    // console.log(resetStyle);
+
+    const body = window.document.body;
+    console.log(body);
+    
+    resetStyle(body, 0, 0, 'border-box');
+    /* body.style.margin = 0;
+    body.style.padding = 0;
+    body.style.boxSizing = 'border-box'; */
+
+    const root = window.document.getElementById('root');
+    console.log(root);
+
+    widthAndHeight(root, '100vw', '100vh');
+    /* root.style.width = '100vw';
+    root.style.height = '100vh'; */
+    backgroundColor(root, '#333');
+    /* root.style.backgroundColor = '#333'; */
+    flexSetting(root, 'column');
+    /* root.style.display = 'flex';
+    root.style.justifyContent = 'center';
+    root.style.alignItems = 'center'; */
+
+    const section = window.document.createElement('section');
+    console.log(section);
+
+    widthAndHeight(section, '30vw', ' 30vh');
+    /* section.style.width = '30vw';
+    section.style.height = '30vh'; */
+    backgroundColor(section, 'cadetblue');
+    /* section.style.backgroundColor = 'cadetblue'; */
+    root.appendChild(section);
+    /* 상수 root 안으로 상수 section을 자식 노드로 이동시킵니다. */
+
+    const main = document.querySelector('section');
+    main.addEventListener('click', function() {
+      backgroundColor(main, 'crimson');
+      console.log('크림슨');
+    });
+  </script>
+</body>
+</html>

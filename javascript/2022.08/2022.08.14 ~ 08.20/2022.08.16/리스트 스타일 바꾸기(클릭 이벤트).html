@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* body > ul > li {
+
+    } */
+
+  </style>
+  
+</head>
+<body>
+  <ul>
+    <li>menus-1</li>
+    <li>menus-2</li>
+    <li>menus-3</li>
+    <li>menus-4</li>
+    <li>menus-5</li>
+  </ul>
+  <script>
+    let liItems = document.querySelectorAll("body > ul > li");
+    console.dir(liItems);
+
+    // 1. 문서를 클릭하면
+    // 2. li태그들의 색깔을 바꾸어줘
+
+    window.document.body.addEventListener('click', function() {
+      for(let i = 0; i < liItems.length; i++) {
+        liItems[i].style.backgroundColor = "cadetblue";
+      }
+
+    });
+
+
+
+
+  </script>
+</body>
+</html>

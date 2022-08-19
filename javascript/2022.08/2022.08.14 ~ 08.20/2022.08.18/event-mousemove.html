@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #root > h1 {
+      color: #ccc;
+      font-size: 1rem;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <h1 id="x-position">hello</h1>
+    <h1 id="y-position">bye</h1>
+  </div>
+  <script>
+    const xPosition = window.document.getElementById('x-position');
+    const yPosition = window.document.getElementById('y-position');
+    console.log(xPosition, yPosition);
+
+    // 'x-position' 과 'y-position' 을 상수로 선언하고 알맞게 선언이 되었는지 콘솔로 확인
+
+    window.addEventListener('mousemove', function(event) {
+
+      //console.log('test event!');
+      // 마우스를 움직일때 마다 'test event!' 라는 문자열을 콘솔에 출력합니다.
+      
+      console.log(event); 
+      // 마우스를 움직일때 매개변수 event를 콘솔에 출력해주세요.
+      
+      console.log(event.offsetX);
+      console.log(event.offsetY);
+      // event라는 매개변수의 offsetX, offsetY 값을 콘솔에 출력해주세요.
+      // offsetX, offsetY 값의 기준은 브라우저 좌측 상단 끝을 기준으로 합니다.
+
+      
+      xPosition.textContent = event.offsetX;
+      yPosition.textContent = event.offsetY;
+      // event라는 매개변수의 offseX, offsetY 값을 xPosition, yPosition의 textContent에 대입해주세요.
+
+    });
+
+  </script>
+</body>
+</html>

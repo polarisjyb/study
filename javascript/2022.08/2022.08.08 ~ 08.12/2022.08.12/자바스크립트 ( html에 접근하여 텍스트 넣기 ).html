@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+
+    }
+
+    body > div {
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      flex-wrap: wrap;
+    }
+
+    body > div > div {
+      width: 300px;
+      height: 250px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+
+<script>
+  console.log(window.document.body.children);
+  console.log(window.document.body.children[0]);;
+  // body 태그 안에 속한 목록들을 확인합니다.
+
+  let block = window.document.body.children[0].children;
+  
+
+  console.log(block)
+  // length가 있다면 반복문이 가능하다.
+
+  let members = [
+    "피카츄",
+    "라이츄",
+    "파이리",
+    "꼬부기",
+    "버터풀",
+    "야도란",
+    "피죤투",
+    "또가스",
+    "어니부기",
+  ]
+
+  let section = document.getElementsByTagName("section");
+  console.log(section);
+
+  for (let i = 0; i < block.length; i++) {
+    if (block.length === members.length) {
+        // block( 컨텐츠 박스 )의 길이와 members ( 포켓몬 ) 길이가 같다면
+        block[i].textContent = members[i];
+        // block ( 컨텐츠 박스의 텍스트에 members의 배열 목록의 순서를 대입한다.)
+        block[i].style.backgroundColor = "gray";
+        block[i].style.width = "400px";
+        block[i].style.margin = "20px" 
+        block[i].style.height = "20vh";
+        block[i].style.minWidth = "200px";
+      }
+  }
+  
+
+</script>
+</html>

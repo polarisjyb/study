@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      width: 100vw;
+      height: 100vw;
+      background-color: salmon;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="root"></div>
+
+  <script>
+
+    let root = document.getElementById("root"); 
+    let col = "crimson";
+
+    root.addEventListener('click', function() {
+      if(root.style.backgroundColor === col) {root.style.backgroundColor = "salmon";
+      } else {
+        root.style.backgroundColor = col;
+      }
+    });
+
+    root.addEventListener('wheel', function() {
+      if(root.style.backgroundColor === col) {root.style.backgroundColor = "salmon";
+      } else {
+        root.style.backgroundColor = col;
+      }
+    });
+
+    // 문서에 있는 데이터를 '클릭', '휠' 으로 제어하는 것을 자바스크립트로 작업하는 중
+    // if : '만약에'
+    // if() 제어문, 논리제어문
+
+  </script>
+</body>
+</html>

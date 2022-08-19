@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2022.07.22 마크업 연습 ( 폼 요소 연습하기 input 태그 2)</title>
+</head>
+<body>
+  <h1>input 태그의 주요 속성 연습하기</h1>
+
+  <form>
+    <label>value 속성</label> <input type="text" name="nickname" value="이름"><br>
+        <!-- <input> value 속성은 입력값을 지정합니다 -->
+    <label>placeholder</label> <input type="text" name="username" placeholder="이름을 입력하세요"><br>
+    <label>maxlength 속성</label> <input type="text" name="maxlength" maxlength="6"><br>
+    <label>readonly 속성</label> <input type="text" name="phone" value="010-1111-1111" readonly><br>
+        <!-- <input> 태그 속성 중 readonly 는 input 입력 필드가 "읽기 전용" 임을 명시합니다.
+        읽기 전용으로 설정된 입력 필드는 사용자가 수정할 수 없지만, 하이라이트 하거나 복사할 수 있습니다. -->
+    <label>disabled 속성</label> <input type="text" name="school" value="서울대학교" disabled="disabled"><br>
+        <!-- <input> 태그의 disabled 속성은 해당 <input> 요소가 비활성화 됨을 명시합니다.
+        disabled 속성이 명시된 <input> 요소는 사용할 수 없으며, 사용자가 클릭할 수도 없습니다.
+        또한, 폼 데이터가 제출될 때도 disabled 속성이 명시된 <input> 요소의 데이터는 제출되지 않습니다.-->
+    <label>name 속성</label>  <input type="text" name="userid" placeholder="아이디를 입력하세요"><br>
+        <!-- <input> name 속성은 입력된 값을 서버로 전송할 때 사용됩니다. 서버와 교류 할 때 필수적으로 id 역할로 사용됩니다. -->
+    <label>name 속성</label>  <input type="date" name="birth" placeholder="생일을 입력하세요"><br>
+    <label>name 속성</label>  <input type="radio" name="career" value="0" checked="checked">신입<br>
+        <!-- <input> chekced 속성은 라디오버튼, 체크박스를 미리 선택되게 한다. -->
+    <label>name 속성</label>  <input type="checkbox" name="tech" value="java">java
+                              <input type="checkbox" name="tech" value="script">script
+                              <input type="checkbox" name="tech" value="c" checked="checked">c
+                              <input type="checkbox" name="tech" value="python" checked="checked">python
+                              <input type="checkbox" name="tech" value="SQL">SQL<br><br>
+    <input type="submit">
+        <!-- <input> submit 속성은 입력된 값을 서버로 제출하는 버튼을 만듭니다. -->
+    <input type="reset">
+        <!-- <input> reset 속성은 폼의 입력값을 초기화 하는 버튼을 만듭니다. -->
+  </form>
+</body>
+</html>

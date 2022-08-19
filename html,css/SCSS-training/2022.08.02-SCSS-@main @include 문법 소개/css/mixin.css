@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*
+  SCSS는 값을 미리 담아놓는 '변수(variable)' 기능을 지원합니다.
+  미리 선언(declaration)해두면 원할때 편하게 한번에 지정된 값을 바꿀 수 있습니다.
+  변수는 '값'을 담아놓는다는 개념이 중요합니다.
+*/
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+  /*
+  SCSS는 @mixin 문법을 지원합니다.
+  변수가 '값'을 담아놓는 기능을 목적으로 만들어 두었다면,
+  @mixin 은 특정한 속성들 '꾸러미'를 담아놓는 것이 목적입니다.
+
+  똑같은 꾸러미 라면 CSS의 .class 문법을 활용하는 것이 더욱 간편하지만,
+  위와 같이 "무슨 값이든" 유연하게 대처할 수 있는 것이 큰 장점입니다.
+  유연하게 작성하고자 지원하는 @mixin 문법은 물리적으로 '표시(markup)'를 해야하는 CSS 작성 작업에서 탁월하게 생산성을 높혀줍니다.
+  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}/*# sourceMappingURL=mixin.css.map */

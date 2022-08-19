@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <ul>
+      <li>menus-1</li>
+      <li>menus-2</li>
+      <li>menus-3</li>
+      <li>menus-4</li>
+      <li>menus-5</li>
+    </ul>
+    <button id="button">click here!</button>
+  </div>
+
+  <script>
+
+    let button = window.document.getElementById('button');
+    console.log(button);
+
+    // 버튼을 정확하게 getting 했는지 검사
+    
+    /* let buttonOne = document.body.children[0].children[1];
+    console.dir(buttonOne);
+    
+    let buttonTwo = document.querySelector('button');
+    console.dir(buttonTwo);
+    
+    let buttonThree = document.getElementById('button');
+    console.dir('buttonThree');
+    
+    버튼에 접근하는 방법 */
+
+    let liItems = window.document.getElementById('root').children[0].children;
+    console.log(liItems);
+
+    // li 리스트를 정확하게 getting 했는지 검사
+
+    /* let liItemsOne = document.querySelectorAll('ul > li');
+    console.log(liItemsOne);
+
+    liItems에 접근하는 방법 */
+
+    button.addEventListener('click', function(){
+        for (let i = 0; i < liItems.length; i++) {
+        liItems[i].style.backgroundColor = "#333";
+      }
+    });
+
+    
+
+
+
+
+
+  </script>
+</body>
+</html>

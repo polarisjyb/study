@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript 연습 ( 변수 명 규칙 )</title>
+</head>
+<body>
+
+
+
+  <script>
+
+    /* javascript 변수 초기화(Initialize) 및 수정(Change) */
+    /* 초기화는 무언가 원래대로 되돌려놓는 것을 의미하기 때문에 용어가 많이 헷갈린다.
+    개발의 세계에서 말하는 '초기화'는 처음 설정, 혹은 '최초 설정'을 의미한다.
+
+    초기화 (initialize) : 변수선언과 동시에 값이 할당되었다.
+    원래로 돌아갔다는 통상적인 의미보다 "초기설정"의 의미를 가지고 있다.
+
+    코드들을 들여다 볼 때, init 혹은 initialize 라고 쓰여져 있다면 무언가 핵심으로 다루는 키 (key) 일 확률이 높다. */
+    
+    let num1;
+    num1 = 10;
+
+    let num2 = 20;
+
+    let num3= 30, num4 = 40; num5 = 50;
+
+    /* 모두 사용할 수 있는 방법이다.
+      1. 변수만을 선언하고 이후에 값을 넣는 방법
+      2. 변수를 선언하면서 동시에 값을 선언하는 방법 모두 사용이 가능하다. */
+
+
+    let num0 = 10;
+    console.log(num0); // 10
+    
+    num0 = 20;
+    console.log(num0); // 20
+
+    /* 변수는 변할 수 있는 값이기 때문에 위에서 선언하여 초기화한 변수 값을 변경할 수 있다. */
+
+
+    /* javascript 변수명은 문자, 특수문자(_, $)를 사용할 수 있다. */
+    let name = 'Ironman';
+    let _name = 'ironman';
+    let $name = 'ironman';
+
+    console.log(name+_name); // 'Ironmanironman'
+
+
+    /* javascript 변수명은 대 소문자를 구별한다 */
+    let king = '4';
+    let King = 4;
+    
+    console.log(king+King); // 44
+
+    let Ring = 5;
+    let ring = '7';
+
+    console.log(Ring+ring); // 57
+
+
+  </script>
+</body>
+</html>

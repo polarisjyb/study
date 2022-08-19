@@ -1,0 +1,215 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body > header {
+  height: 100vh;
+}
+body > header > div {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+}
+body > header > div > div {
+  line-height: 17em;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body > header > div > div > div:nth-child(1) > h1 {
+  font-size: 18em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+body > header > div > div > div:nth-child(2) > i {
+  font-size: 18em;
+  font-family: "Times New Roman", Times, serif;
+}
+body > main {
+  position: relative;
+  height: 100vh;
+}
+body > main > div {
+  height: inherit;
+}
+body > main > div > div:nth-child(1) {
+  height: inherit;
+  background-color: black;
+  color: #fff;
+}
+body > main > div > div:nth-child(1) > div {
+  height: inherit;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(1) > div {
+  font-size: 5em;
+  display: flex;
+  flex-direction: row;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(1) > div > i {
+  font-family: "Times New Roman", Times, serif;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(2) {
+  width: 100vw;
+  border: solid #fff;
+  border-width: 1px 0;
+  padding: 180px 0;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(2) > div {
+  font-size: 7em;
+  display: flex;
+  justify-content: center;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(2) {
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(3) > div {
+  font-size: 5em;
+  display: flex;
+  flex-direction: row;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(3) > div > i {
+  font-family: "Times New Roman", Times, serif;
+}
+body > section {
+  height: 100vh;
+  background-color: #000;
+}
+body > section > div {
+  height: inherit;
+}
+body > section > div > div {
+  height: inherit;
+  border: solid #fff;
+  border-width: 1px 0 0px 0;
+  display: flex;
+}
+body > section > div > div > div {
+  width: 100vw;
+  color: #fff;
+  border: solid #fff;
+  border-width: 0 1px 0 0;
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > section > div > div > div:nth-child(1) > div {
+  transform: rotate(-90deg);
+}
+body > section > div > div > div:nth-child(2) > div {
+  transform: rotate(-90deg);
+}
+body > section > div > div > div:nth-child(3) > div {
+  transform: rotate(-90deg);
+}
+body > section > div > div > div:nth-child(4) > div {
+  transform: rotate(-90deg);
+}
+body > section > div > div > div:nth-child(5) > div {
+  transform: rotate(-90deg);
+}
+body > section > div > div > div:nth-child(6) > div {
+  transform: rotate(-90deg);
+}
+body > section > div > div > div:nth-child(7) > div {
+  transform: rotate(-90deg);
+}
+body > section > div > div > div:nth-child(8) > div {
+  transform: rotate(-90deg);
+}
+body > article {
+  background-color: rgb(214, 205, 196);
+}
+body > article > div {
+  height: 100vh;
+}
+body > article > div > div {
+  height: inherit;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body > article > div > div > div {
+  background-color: salmon;
+  width: 300px;
+  height: 300px;
+}
+body > article > div > div > div:nth-child(2) {
+  background-color: #000;
+}
+body > article > div > div > div:nth-child(2) > div {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+body > article > div > div > div:nth-child(2) > div > div {
+  width: inherit;
+  height: inherit;
+  font-size: 2.5em;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > article > div > div > div:nth-child(2) > div > div:nth-child(1) {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body > article > div > div > div:nth-child(2) > div > div:nth-child(2) {
+  font-family: "Times New Roman", Times, serif;
+}
+body > article > div > div > div:nth-child(2) > div > div:nth-child(3) {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+body > article > div > div > div:nth-child(2) > div > div:nth-child(4) {
+  border: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+body > article > div > div > div:nth-child(4) {
+  background-color: rgb(12, 99, 231);
+  border: 1px solid #000;
+}
+body > article > div > div > div:nth-child(4) > div {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column-reverse;
+}
+body > article > div > div > div:nth-child(4) > div > div {
+  width: inherit;
+  height: inherit;
+  font-size: 2.5em;
+  color: #000;
+  border-top: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > article > div > div > div:nth-child(4) > div > div:nth-child(1) {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body > article > div > div > div:nth-child(4) > div > div:nth-child(2) {
+  font-family: "Times New Roman", Times, serif;
+}
+body > article > div > div > div:nth-child(4) > div > div:nth-child(3) {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+body > article > div > div > div:nth-child(4) > div > div:nth-child(4) {
+  border: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}/*# sourceMappingURL=style.css.map */

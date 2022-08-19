@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <button id="trigger">click here!</button>
+  </div>
+
+  <script>
+
+    let root = window.document.getElementById('root');
+
+    console.log(root);
+    
+    // 변수 root 선언
+
+
+    let section = window.document.querySelectorAll('#root > section');
+
+    console.log(section);
+
+    // 변수 section 선언
+
+    let trigger = window.document.getElementById('trigger');
+
+    console.log(trigger);
+
+    // 변수 trigger 선언
+
+    let colorSet = ["#333", "#222", "#111", "#000", "#444", "#555"];
+
+    trigger.addEventListener('click', function () {
+      for (let i = 0; i < section.length; i++) {
+        section[i].style.width = '100vw';
+        section[i].style.height = '100vh';
+        section[i].style.backgroundColor = colorSet[i];
+      }
+      trigger.style.display = "none";
+    });
+
+
+
+    /*
+
+    querySelector () --> 반환이 무엇일까?
+    querySelectorAll () --> 반환이 무엇일까?
+
+    --> console.dir(), console.log()로 외우기보다 검증
+    getElementById()
+    getElementsClassName()
+
+    식별자의 종류는 너무 많기 때문에 '반환'을 확인하는 방식을 채택할 것
+    
+    */
+
+  </script>
+</body>
+</html>

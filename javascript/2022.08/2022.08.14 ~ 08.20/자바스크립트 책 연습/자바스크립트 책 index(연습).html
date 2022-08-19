@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+    <p id="choice">
+      여기에 일기를 표시한다.
+    </p>
+  <script>
+
+    console.log(document.getElementById('choice'));
+    console.log(typeof('choice'));
+
+    // console - 객체  ( 지시 대상 )
+    // log - 매서드 ( 동작  지시 )
+    // ('') - 매개변수 ( 지시 내용 )
+
+    document.getElementById('choice').textContent = new Date();
+
+    // 'new Date()' - '현재 일시를 가져오는 기능'
+    // 혹시 이걸로 웹 브라우저에서 현재 시간을 실시간으로 보여줄 수 있지 않을까?
+    // 날짜 카운트다운이라던가 + Day 라던가 표현할 수 있을 듯 하다.
+
+    /*  textContent 는 '프로퍼티' ~ 객체의 상태를 나타낸다.
+    window나 document 같은 모든 객체는 메서드 외에도 '프로퍼티(property)'를 가지고 있다.
+    객체의 프로퍼티란 해당 객체의 상태를 나타내는 것이다. 일반적으로 프로퍼티 값은 읽고 쓰기가 가능하다.
+    textContent는 document.getElementById('choice')로 가져온 요소의 '콘텐츠'를 나타내는 프로퍼티라고 할 수 있다.
+    실습에서 작성한 위의 코드를 앞서 본 문장에 적용해 보면, 다음과 같다.
+    */
+    
+    /* <p id="choice"></p>의 textContent를 newDate () 으로 한다. */
+
+
+    document.getElementById('choice').textContent = (1+3);
+    // 4 ( 브라우저 상에서 4로 표시된다. )
+    document.getElementById('choice').textContent = (2+4);
+    // 6 ( 브라우저 상에서 6으로 표시된다. )
+
+    // 작은 따옴표(큰 따옴표) 없이 수식을 적으면 계산 결과가 표시된다.
+    // '변경하고 싶은 문자열' 에 수식을 지정한 '예(example)' 이다.
+    // 브라우저 상에서는 스크립트에 제일 마지막에 적힌 것이 출력되기 때문에 6이 출력된다.
+
+
+
+  </script>
+</body>
+</html>

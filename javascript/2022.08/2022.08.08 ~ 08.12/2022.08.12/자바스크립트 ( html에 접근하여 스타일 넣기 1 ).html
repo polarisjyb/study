@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <body>
+    <div id="root">
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+    </div>
+
+  </body>
+  <script>
+    console.dir(window.document.getElementById("root").children);
+    // section에 접근
+
+    let section = document.getElementsByTagName("section");
+    // 함수 선언
+
+    console.dir(section);
+    // 구조를 확인하여 length 가 있음을 확인
+    // length가 있으면 반복문이 가능하다.
+
+    for(let i = 0; i < section.length; i++) {
+      section[i].style.backgroundColor = "salmon";
+      section[i].style.width = "100px";
+      section[i].style.height = "100px";
+      section[i].style.margin = "100px";
+      section[i].style.padding = "15px";
+    }
+    
+
+  </script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #root {
+      width: 100vw;
+      background-color: #333;
+    }
+
+    #root > section {
+      width: inherit;
+      height: 100vh;
+      border: 1px solid #000;
+    }
+
+    #root > section:nth-child(1) {
+      background-color: salmon;
+    }
+
+    #root > section:nth-child(2) {
+      background-color: cadetblue;
+    }
+
+    #root > section:nth-child(3) {
+      background-color: chocolate;
+    }
+
+    #root > section:nth-child(4) {
+      background-color: coral;
+    }
+
+    #root > section:nth-child(5) {
+      background-color: cornflowerblue;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+  <script>
+
+    let colorSet = ["salmon","cadetblue", "chocolate", "coral", "cornflowerblue"];
+
+    let a;
+    a = document.getElementById("root");
+
+    let count = 0;
+
+    console.dir(a); // 검사를 하지 않으면
+
+    let widthValue = 100;
+
+    setInterval(function() {
+      let b = widthValue + 10; // 이부분이 불가능, 덧셈이 되는지 안되는지 모르니까
+      widthValue = b;
+      a.style.width = widthValue + "px";
+    }, 16);
+
+
+  </script>
+</body>
+</html>

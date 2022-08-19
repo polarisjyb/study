@@ -1,0 +1,84 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body > header {
+  height: 100vh;
+}
+body > header > div {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+}
+body > header > div > div {
+  line-height: 17em;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body > header > div > div > div:nth-child(1) > h1 {
+  font-size: 18em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+body > header > div > div > div:nth-child(2) > i {
+  font-size: 18em;
+  font-family: "Times New Roman", Times, serif;
+}
+body > main {
+  position: relative;
+  height: 100vh;
+}
+body > main > div {
+  height: inherit;
+}
+body > main > div > div:nth-child(1) {
+  height: inherit;
+  background-color: black;
+  color: #fff;
+}
+body > main > div > div:nth-child(1) > div {
+  height: inherit;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(1) > div {
+  font-size: 5em;
+  display: flex;
+  flex-direction: row;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(1) > div > i {
+  font-family: "Times New Roman", Times, serif;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(2) {
+  width: 100vw;
+  border: solid #fff;
+  border-width: 1px 0;
+  padding: 180px 0;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(2) > div {
+  font-size: 7em;
+  display: flex;
+  justify-content: center;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(2) {
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(3) > div {
+  font-size: 5em;
+  display: flex;
+  flex-direction: row;
+}
+body > main > div > div:nth-child(1) > div > div:nth-child(3) > div > i {
+  font-family: "Times New Roman", Times, serif;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>menus-1</li>
+    <li>menus-2</li>
+    <li>menus-3</li>
+    <li>menus-4</li>
+    <li>menus-5</li>
+  </ul>
+</body>
+
+<script>
+  console.dir(window);
+  console.dir(window.document.body.children[0].children[3].textContent);
+  // 구조 엑세스 방식 : 명령(command) 방식 : 절차가 존재한다. : 절차지향
+
+  // 초기화 (Initialized) : 목적과 데이터가 정리된 초기 상태
+  let li = document.getElementsByTagName("li");
+  // 함수를 적극 활용 : 선언(declration) 방식 : 목적을 말하는 방식 : 선언형 프로그래밍
+
+  console.dir(li);
+  // length 가 있으면 반복문을 쓸 수 있다.
+
+  for(let i = 0; i<li.length; i++) {
+    li[i].style.color = "salmon";
+  }
+
+
+
+</script>
+</html>

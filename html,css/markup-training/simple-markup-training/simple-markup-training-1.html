@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2022.07.25 마크업 연습 ( 요소 주변에 선을 긋는 "border 속성" )</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding-left: 20px;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .latest {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      padding-top: 15px;
+      display: flex;
+      line-height: 25px;
+    }
+
+    .latest li {
+      border-right: 1px solid #2f2f2f;
+      flex: 1;
+    }
+
+    h2 {
+      border-bottom: 1px solid;
+      padding-bottom: 20px;
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 10px;
+      line-height: 15px;
+    }
+
+    .content1, .content2, .content3 {
+      padding: 0;
+      padding-left: 10px;
+    }
+
+    .content1 h3, .content2 h3, .content3 h3 {
+      font-size: 20px;
+    }
+
+    .content1 h3 {
+      color: orange;
+    }
+
+    .content1 .new-resource {
+      font-size: 15px;
+    }
+
+    .content2 .pro-bono {
+      font-size: 15px;
+    }
+
+    .content2 h3 {
+      color: rgb(223, 109, 233);
+    }
+
+    .content3 h3 {
+      color: rgb(57, 165, 236);
+    }
+
+    .date {
+      font-size: 5px;
+      color: gray;
+    }
+
+    .time {
+      font-size: 5px;
+      color: gray;
+    }
+
+    a {
+      border: 1px solid rgb(192, 190, 190);
+      border-radius: 2px;
+      text-decoration: none;
+      color: #000;
+      padding: 20px 30px;
+      transition: 0.3s;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: #fff;
+      background-color: orange;
+      border: none;
+      transition: 0.3s;
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+
+
+  <h2>THE LATEST</h2>
+
+
+  <ul class="latest">
+    <li>
+      <div class="content1">
+        <h3>LATEST NEWS</h3>
+        <p class="date">Oct 19th, 2018</p>
+        <p class="new-resource">NEW RESOURCE: Pro Bono as a People Strategy</p>
+        <p>How companies can create shared value between CSR and HR Taproot has long made the case</p>
+
+        <a href="http://www.naver.com" target="_blank">NEWS ▶</a>
+
+      </div>
+    </li>
+    <li>
+      <div class="content2">
+        <h3>LATEST RESOURCES</h3>
+        <p class="pro-bono">Pro Bono as a People Strategy</p>
+        <p>This resource was developed with support from Prudential Financial, Inc. Taproot has long made the case</p>
+        
+        <a href="http://www.naver.com">RESOURCES ▶</a>
+
+      </div>
+    </li>
+    <li>
+      <div class="content3">
+        <h3>LATEST TWEETS</h3>
+        <p class="learn">Learn more about Taproot & our new CEO by checking out her session at the <strong>@latest...</strong></p>
+        <p class="time"><i>10 hour ago</i></p>
+
+        <a href="http://www.naver.com">TWEETS ▶</a>
+
+      </div>
+    </li>
+  </ul>
+
+</body>
+</html>

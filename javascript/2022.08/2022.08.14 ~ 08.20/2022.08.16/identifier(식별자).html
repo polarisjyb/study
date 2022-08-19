@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="title">hello</h1>
+
+  <script>
+
+    let title = document.getElementById('title');
+
+    console.log(title);
+    
+    console.dir(title.textContent);
+    // 문서에서 어떤 데이터를 가져올 수 있는지, getting
+    
+    // 어떤 데이터를 문서에 넣어줄 수 있는지, setting
+    
+    console.dir(title);
+
+    title.addEventListener('click', function() {
+      title.textContent = '안녕';
+      title.style.color = 'crimson';
+      title.style.fontSize = '60px';
+      window.document.children[0].style.backgroundColor = 'gray';
+
+      console.dir(title.clientWidth);
+      console.dir(title.clientHeight);
+      console.dir(window.document.children[0]);
+    });
+
+    /* "h1 태그에 자식으로 된 text node 데이터를 동적으로 특정 문자열로 이벤트를 통해 바꾸어주었다." */
+
+
+    
+    
+  </script>
+</body>
+</html>

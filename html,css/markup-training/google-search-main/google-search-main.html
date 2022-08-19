@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* reset */
+
+    body {
+      margin: 0;
+      padding: 30px;
+    }
+
+    body div {
+      
+    }
+
+    /* a */
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* nav */
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      padding: 10px;
+    }
+
+    /* header */
+
+    header {
+      padding: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header div {
+
+    }
+
+    header div img {
+      width: 250px;
+    }
+
+    /* main */
+
+    main {
+      padding: 30px 0 40px 0;
+    }
+
+    main div img {
+      display: block;
+      margin: auto;
+      width: 600px;
+    }
+
+    /* aside */
+
+    aside {
+      display: flex;
+      width: 550px;
+      height: 44px;
+      margin: 0 auto;
+      border: 1px solid rgb(214, 213,213);
+      border-radius: 24px;
+      align-items: center;
+    }
+
+    aside:hover {
+      box-shadow: 1px 1px 5px 1px rgb(221, 220, 220);
+      transition: 0.2s;
+    }
+
+    aside .search {
+      border: none;
+      flex: 100%;
+      text-indent: 15px;
+      padding: 0;
+      margin: 0 3px 0 3px;
+    }
+
+    aside .search:focus {
+      outline: none;
+    }
+
+    /* section */
+
+    section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: 30px;
+    }
+
+    section div {
+      padding: 40px;
+    }
+
+    section div img {
+      display: block;
+      margin: auto;
+      width: 150px;
+      height: 150px;
+    }
+
+    section div h3, section > div p {
+      text-align: center;
+    }
+
+    /* article */
+
+    article {
+      display: flex;
+      justify-content: space-evenly;
+      background-color: rgb(195, 197, 197);
+      align-items: center;
+      height: 80px;
+      border: 1px solid #858383;
+    }
+
+    article a {
+      padding: 10px;
+      background-color: crimson;
+      color: #fff;
+      transition: 0.5s;
+      text-decoration: none;
+    }
+
+    article a:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+
+    /* footer */
+
+    footer {
+      padding-top: 40px;
+    }
+
+    footer div {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    footer nav {
+      
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <header>
+      <div>
+        <a href="https://www.google.com" target="_blank"><img src="./images/google.png" alt="google"></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" target="_blank">menu1</a></li>
+          <li><a href="#" target="_blank">menu2</a></li>
+          <li><a href="#" target="_blank">menu3</a></li>
+          <li><a href="#" target="_blank">menu4</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <img src="./images/earth.jpg" alt="earth">
+      </div>
+    </main>
+    <aside>
+      <input type="text" class="search" name="search-bar" placeholder="search">
+    </aside>
+    <section>
+      <div>
+        <a href="#" target="_blank">
+          <img src="./images/logo.png" alt="korea">
+        </a>
+          <h3>This is a section.</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+      <div>
+        <a href="#" target="_blank">
+          <img src="./images/logo.png" alt="korea">
+        </a>
+          <h3>This is a section.</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+      <div>
+        <a href="#" target="_blank">
+          <img src="./images/logo.png" alt="korea">
+        </a>
+          <h3>This is a section.</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+    </section>
+    <article>
+      <p><strong>Get in touch!</strong>
+      We'd love to hear from you, you attractive person you.</p>
+      <a href="#" target="_blank">Contact us</a>
+    </article>
+    <footer>
+      <div>
+        <p>
+          @copyright <a href="https://www.google.com" target="_blank">Google</a>
+        </p>
+        <nav>
+          <ul>
+            <li><a href="#" target="_blank">menu1</a></li>
+            <li><a href="#" target="_blank">menu2</a></li>
+            <li><a href="#" target="_blank">menu3</a></li>
+            <li><a href="#" target="_blank">menu4</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

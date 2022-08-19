@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <ul>
+    <li>menus-1</li>
+    <li>menus-2</li>
+    <li>menus-3</li>
+    <li>menus-4</li>
+    <li>menus-5</li>
+  </ul>
+
+  <script>
+
+    let liItems = document.querySelectorAll('body > ul > li');
+    // 식별할때 쓰는 내장함수 querySelectorAll
+    // querySelectorAll 함수는 배열을 반환한다.
+
+    /* 처음 써보는 함수일때는 조건이 무엇인지 알아야한다.
+    1. 입력 조건이 무엇인지 알기 ( 에디터 힌트, 검색 )
+    2. 출력조건 (반환 )이 무엇인지 알기 ( 에디터 힌트, 검색 )
+    */
+
+    console.log(liItems);
+
+    console.log(liItems[3]);
+
+    console.dir(liItems[3]);
+
+    liItems[3].style.color = "crimson";
+    
+
+    // 1. 문서를 클릭하면
+    // 2. li 태그의 색깔을 바꿔줘
+
+    document.body.addEventListener('click', function() {
+      for( let i = 0; i < liItems.length; i++
+      ) {
+        liItems[i].style.backgroundColor = "#333";
+      }
+    });
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #root {
+      width: 100vw;
+      background-color: #333;
+    }
+
+    #root > section {
+      width: inherit;
+      height: 100vh;
+      border: 1px solid #000;
+    }
+
+    #root > section:nth-child(1) {
+      background-color: salmon;
+    }
+
+    #root > section:nth-child(2) {
+      background-color: cadetblue;
+    }
+
+    #root > section:nth-child(3) {
+      background-color: chocolate;
+    }
+
+    #root > section:nth-child(4) {
+      background-color: coral;
+    }
+
+    #root > section:nth-child(5) {
+      background-color: cornflowerblue;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+  <script>
+
+    let colorSet = ["salmon","cadetblue", "chocolate", "coral", "cornflowerblue"];
+
+    let a;
+    a = document.getElementById("root");
+
+    console.log(a.children[0]); // console.log( ) : 기록을 본다.
+    console.dir(a.children[4]); // console.dir( ) : 구조를 본다.
+
+    a.children[0].style.backgroundColor = colorSet[2+2];
+
+    console.log(typeof (a));
+    console.dir(a);
+
+  </script>
+</body>
+</html>

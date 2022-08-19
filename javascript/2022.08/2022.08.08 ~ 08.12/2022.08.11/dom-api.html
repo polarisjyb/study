@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    console.dir(window.innerWidth); 
+    // 콘솔창에 기록을 남깁니다.
+    // 브라우저의 최상위 root 디렉토리를 확인하는 중
+    // "자바스크립트는 문서뿐만 아니라 브라우저도 같이 다룰 수 있다."
+    
+    // innerWidth : 할성화된 안쪽부분의 너비
+    
+    // @media (max-width: 200px;)
+    // if( 200 < window.innerWidth)
+
+    // window = 브라우저를 의미한다.
+    // 검색시에 window 객체를 검색하면 모든 속성값의 데이터를 조회할 수 있다.
+    
+    // 브라우저 객체 = BOM (Browser Object Model)
+    // 문서 객체 = DOM (Document Object Model)
+
+    // 자바스크립트의 특성 : BOM(브라우저 객체) 과 DOM(문서 객체) 을 다루기 위해서 만들어진 언어이기 때문에 내장(built-in)이 되어있다.
+
+    // API ( application programming interface )
+    // --> 시각화가 되어있지 않고 데이터를 가지고 있는 프로그래밍 언어
+    // --> 대상 - 개발자
+
+    // UI ( user interface ) : 프로그래밍 지식이 필요없어도 쓸 수 있을만큼 자동화 되어 있는 '시각적 모양새'
+    // --> 대상 - 일반 사용자
+
+    console.dir(window.document);
+
+    // DOM, BOM, API 들은 모두 '객체' 방식을 채택하고 있다. = 하나만 알아도 찾을 수 있다. window, document
+
+    // react --> DOM API 에 특화되어 있다. ( 문서를 다루는데 아주 편리하게 쓰인다. )
+    
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #root {
+      width: 100vw;
+      background-color: #333;
+    }
+
+    #root > section {
+      width: inherit;
+      height: 100vh;
+      border: 1px solid #000;
+    }
+
+    #root > section:nth-child(1) {
+      background-color: salmon;
+    }
+
+    #root > section:nth-child(2) {
+      background-color: cadetblue;
+    }
+
+    #root > section:nth-child(3) {
+      background-color: chocolate;
+    }
+
+    #root > section:nth-child(4) {
+      background-color: coral;
+    }
+
+    #root > section:nth-child(5) {
+      background-color: cornflowerblue;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+  <script>
+
+    let colorSet = ["salmon","cadetblue", "chocolate", "coral", "cornflowerblue"];
+
+    let colorObj = {
+      colOne : "salmon",
+      colTwo : "cadetblue",
+      colThree : "chocolate",
+      colFour : "coral",
+      colFive : "cornflowerblue"
+    }
+
+    console.log(colorObj);
+    // 객체에 담겨있는 키에 접근하고자 할 때 .(온점) 표기법 : dot notation 을 쓴다.
+    // 데이터가 무엇이 들어있든, 에디터가 찾아준다.
+    // 객체는 이름이 있다.
+
+
+    console.log(colorSet[1]); // cadetblue
+    // 배열은 키에 접근하고자 할 때 [] 대괄호에 데이터 타입 숫자를 기입해서 엑세스 한다.
+    // 배열은 순서만 있다.
+    // 0번도 있다.
+    // 1번은 두번째를 가리킨다.
+    // 0번과 1번째는 다른 이야기
+    // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 = 10
+    // index : "0번째" 
+
+  </script>
+</body>
+</html>
