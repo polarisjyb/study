@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    /* '만약 ~라면,' '만약 ~가 아니라면' 처럼 특정 조건이 성립하는지 여부에 따라 처리를 바꾸는 것이 if 문이다.
+    클릭한 것이 '확인'인지 아니면 '취소'인지를 판단해서 처리를 바꾸는 if문을 작성한다. 제대로 된 if문을 작성하려면 '조건'을 설정할 필요가 있다.
+     이러한 조건 설정을 위해 필요한 것이 boolean(true/fallse) 값이다. */
+
+    // console.log(window.confirm('게임 시작! 준비됐나요?'));
+    
+    /* 확인 다이얼로그 박스를 표시하려면 window 객체의 confirm 메서드를 사용하면 된다.
+    사용법은 alert 메서드와 거의 동일하며 () 안에 표시하고 싶은 메시지를 입력한다.
+    confirm 메서드의 반환 값은 반드시 true나 false 중 하나여야 한다.
+    */
+
+
+    /* Q. 확인 다이얼로그 상자의 '확인'을 클릭하면 콘솔에 '게임을 시작합니다'가 출력된다.
+    또한 '취소를' 클릭하면 '게임을 종료합니다'가 출력되도록 하는 if문을 작성하세요. */
+
+      if(window.confirm('게임 시작! 준비됐나요?')) {
+        console.log('게임을 시작합니다.');
+      } else {
+        console.log('게임을 종료합니다.');
+      }
+
+    /*
+    
+    if(조건식) {
+      조건식이 true이면 (성립하면) 실행하는 처리
+    } else {
+      조건식이 false이면 (성립하지 않으면) 실행하는 처리
+    } 
+    
+    else 이후를 생략할 수도 있다.
+
+    if문은 () 안이 true일 때만 싱핼하고, false일 떄는 아무런 처리를 하지 않도록 설정할 수 있다.
+    false일 때 실행할 처리가 없다면 else 이후를 생략하면 된다.
+
+    ex) if(window.confirm('...')) {
+      console.log('게임을 시작합니다.');
+    } 
+  
+    */
+
+
+  </script>
+
+</body>
+</html>

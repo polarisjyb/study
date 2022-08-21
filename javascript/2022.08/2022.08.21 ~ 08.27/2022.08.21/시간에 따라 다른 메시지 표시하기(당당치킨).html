@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    let hour = new Date().getHours();
+
+    if(hour >= 13 && hour < 16) { // 13시부터 16시 사이
+      window.alert('당당치킨 1+1 할인!'); 
+    } else if (hour >= 10 && hour < 13) { // 10시부터 13시 사이
+      window.alert('당당치킨 2000원 할인!');
+    } else { // 그 이외의 시간
+      window.alert('지금은 당당치킨 판매시간이 아닙니다.');
+    }
+
+  </script>
+
+</body>
+</html>

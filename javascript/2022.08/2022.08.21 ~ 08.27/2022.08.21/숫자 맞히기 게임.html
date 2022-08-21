@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    /* 프롬프트에 숫자를 입력해서 해당 숫자가 답보다 큰지 작은지를 판단한다. */
+
+    let number = Math.floor(Math.random() * 6);
+    let answer = parseInt(window.prompt('숫자 맞히기 게임. 0~5의 숫자를 입력하세요.'));
+    let message;
+
+    if(answer === number) {
+      message = '정답!';
+    }else if (answer < number) {
+      message = '땡! 더 큰 숫자입니다!';
+    }else if (answer > number) {
+      message = '땡! 더 작은 숫자입니다.';
+    }else {
+      message = '0~5의 숫자를 입력하세요.';
+    }
+
+    window.alert(message);
+
+    /*
+    지금까지는 변수를 정의하면서 동시에 값을 대입했었다. 이번에는 먼저 변수 message를 정의해두고,
+    데이터 대입은 나중에 하는 방법으로 했다. 
+    
+      마지막 else는 지금까지 나온 세 가지 조건식이 모두 false이면 마지막 else의 {~} 처리가 실행된다.
+      위의 경우에서는 변수 message에 대입하는 문자열을 보면 예상이 되겠지만, 세 가지 조건식이 모두
+      false가 되는 것은 프롬프트에 숫자 이외의 값이 입력되는 경우다.
+    */
+
+    /*
+    
+    위에서 사용한 parseInt라는 메서드가 어떤 역할을 하는지 알아보자.
+    
+    프롬프트에 입력한 내용을 변수 answer에 대입하기 전에 정수로 변환했었다.
+    pareIntsms () 안의 매개변수를 '정수로 변환하도록 노력하는' 메서드다.
+    '노력한다'는 부분이 중요하다.
+    예를 들어, '컴퓨터야, 변환해줘!' 하고 프롬프트에 입력한 경우 이것을 변환하려고 노력은 하지만
+    숫자로는 변환하지 못한다.
+    프롬프트에 입력한 텍스트가 3이라고 입력했다고 해도 숫자가 아닌 '문자'로 인식된다.
+    하지만 뒤에서 변수 answer와 number의 대소를 비교하므로 문자 상태 그대로면 곤란하다.
+    그래서 parseInt 메서드를 사용해서 프롬프트에 입력한 내용을 정수로 변환하는 것이 그 이유다.
+    변수 answer의 값이 숫자(정수)라면 숫자와 숫자는 비교할 수 있기 때문이다.
+
+    */
+
+  </script>
+
+</body>
+</html>
