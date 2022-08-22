@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  
+  <div id="root">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <script>
+
+    const root = window.document.getElementById('root');
+    const ul = root.children[0];
+    // console.log(ul);
+    const liItems = ul.children;
+    // console.log(liItems);
+    // console.log(liItems.length); // 5
+    const liTextNode = ['길몬', '레나몬', '테리어몬', '임프몬', '브이몬']
+    // console.log(liTextNode);
+
+    for (let i = 0; i < liItems.length; i++) {
+      liItems[i].textContent = liTextNode[i];
+      liItems[i].style.width = '100vw';
+      liItems[i].style.height = (200 / (100 / liItems.length) ) + 'vh';
+    }
+    
+    function menuToggler(container, checkElementString) {
+      if(typeof checkElementString === "string") {
+        if(container.tagName === checkElementString.toUpperCase()) {
+          
+          // container의 tagName 키 값을 통해 원하는 태그가 선택되었는지 버그작동 예방
+          let isStatus = true;
+          // isStatus 현재 상태를 마치 전원 스위치 처럼 핸들링 하고자 초기화
+          container.addEventListener('click', function(event ) {
+            // console.log(event)
+            if(isStatus === true) {
+              event.target.style.backgroundColor = 'crimson';
+              isStatus = false;
+            } else {
+              event.target.style.backgroundColor = 'cadetblue';
+              isStatus = true;
+            }
+          });
+        }
+      }
+    }
+
+    menuToggler(ul, 'ul');
+
+    // 메뉴를 선택하면 색깔이 바뀌는 함수가 만들어졌습니다.
+
+    console.log('토글');
+
+
+  </script>
+
+</body>
+</html>

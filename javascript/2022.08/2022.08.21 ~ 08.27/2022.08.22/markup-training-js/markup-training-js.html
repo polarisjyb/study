@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="root"> <!-- #root -->
+
+    <div id="left-page"> <!-- #left-page -->
+
+      <div></div>
+      <div><p>R</p></div>
+      <div><p>E</p></div>
+      <div><p>T</p></div>
+      <div><p>U</p></div>
+      <div><p>R</p></div>
+      <div><p>N</p></div>
+
+    </div>
+
+    <div id="right-page"> <!-- #right-page -->
+
+      <div>
+
+        <div> <!-- /hr -->
+          <hr>
+        </div>
+
+        <div> <!-- lorem ipsum -->
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu accumsan arcu. Integer hendrerit placerat tellus, et porta massa scelerisque et. Phasellus porttitor, risus et pharetra tempus, est urna molestie tortor, egestas hendrerit nisl metus a neque. Maecenas pellentesque dui eu ex dignissim dictum. In odio magna, dapibus ac nisl eget, aliquam efficitur dui. Vestibulum interdum felis in est lobortis pretium. Donec facilisis ex sit amet enim hendrerit tempor. Fusce pharetra id orci et dictum. Nunc aliquam tempus venenatis.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>  
+
+  <script>
+    
+
+    let root = window.document.getElementById('root');
+    console.log(root);
+    console.dir(root);
+
+    let leftPage = window.document.getElementById('left-page');
+    console.log(leftPage);
+    console.dir(leftPage);
+
+    for(let i = 0; i<leftPage.children.length; i++) {
+      leftPage.children[i].style.backgroundColor = 'white';
+    }
+
+    let rightPage = window.document.getElementById('right-page');
+    console.log(rightPage);
+    console.dir(rightPage); 
+    
+    let hr = rightPage.children[0].children[0];
+    console.log(hr);
+    
+    hr.style.padding = '30px'; 
+
+    let LoremIpsum = rightPage.children[0].children[1];
+    console.log(LoremIpsum);
+
+    LoremIpsum.style.padding = '30px';
+    LoremIpsum.style.fontSize = '1.5rem';
+
+    rightPage.children[0].addEventListener('mouseover', function( ) {
+      rightPage.style.display = 'none';
+      leftPage.style.width = '100vw';
+      leftPage.style.fontFamily = 'Cambria, Cochin, Georgia, Times, serif';
+    })
+
+    rightPage.children[0].addEventListener('mouseout', function( ) {
+      let rightPageWidth = leftPage.style.width;
+      let rightPageDisplay = leftPage.style.display;
+      let leftPageWidth = leftPage.style.width;
+
+      rightPage.style.display = rightPageDisplay;
+      leftPage.style.width = 'calc(100vw/2)';
+      
+    })    
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body */
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* root */
+#root {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  
+  & > div {
+    width: calc(100vw/2);
+    height: inherit;
+  }
+  /* left-page */
+  & > #left-page {
+    width: calc(100vw/2);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    & > div {
+      width: calc((100vw/2)/6);
+      height: 100vh;
+      
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > p {
+        position: relative;
+        right: 50%;
+        font-size: 15rem;
+      }
+    }
+    /* <div> */
+    & > div:nth-child(1) {
+      
+      z-index: 6;
+      & > p {
+        
+      }
+    }
+
+    /* <p> R */
+    & > div:nth-child(2) {
+      
+      z-index: 5;
+      & > p {
+        
+      }
+    }
+    /* <p> E */ 
+    & > div:nth-child(3) {
+      
+      z-index: 4;
+      & > p {
+
+      }
+    }
+    /* <p> T  */
+    & > div:nth-child(4) {
+      
+      z-index: 3;
+      & > p {
+
+      }
+    }
+    /* <p> U  */
+    & > div:nth-child(5) {
+      
+      z-index: 2;
+      & > p {
+        
+      }
+    }
+    /* <p> R  */
+    & > div:nth-child(6) {
+      
+      z-index: 1;
+      & > p {
+        
+      }
+    }
+    /* <p> N  */
+    & > div:nth-child(7) {
+      
+
+      & > p {
+
+      }
+    }
+    
+  }
+  /* right-page */
+  & > #right-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > div {
+      
+    }
+    /* /hr */
+    & > div:nth-child(1) {
+      
+    }
+    /* Lorem ipsum */
+    & > div:nth-child(2) {
+      & > p {
+
+      }
+    }
+  }
+}

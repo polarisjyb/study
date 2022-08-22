@@ -1,0 +1,74 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body */
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* root */
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  /* left-page */
+  /* right-page */
+}
+#root > div {
+  width: 50vw;
+  height: inherit;
+}
+#root > #left-page {
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* <div> */
+  /* <p> R */
+  /* <p> E */
+  /* <p> T  */
+  /* <p> U  */
+  /* <p> R  */
+  /* <p> N  */
+}
+#root > #left-page > div {
+  width: 8.3333333333vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root > #left-page > div > p {
+  position: relative;
+  right: 50%;
+  font-size: 15rem;
+}
+#root > #left-page > div:nth-child(1) {
+  z-index: 6;
+}
+#root > #left-page > div:nth-child(2) {
+  z-index: 5;
+}
+#root > #left-page > div:nth-child(3) {
+  z-index: 4;
+}
+#root > #left-page > div:nth-child(4) {
+  z-index: 3;
+}
+#root > #left-page > div:nth-child(5) {
+  z-index: 2;
+}
+#root > #left-page > div:nth-child(6) {
+  z-index: 1;
+}
+#root > #right-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* /hr */
+  /* Lorem ipsum */
+}/*# sourceMappingURL=style.css.map */
