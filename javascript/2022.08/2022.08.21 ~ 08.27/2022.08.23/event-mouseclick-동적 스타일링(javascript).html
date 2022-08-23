@@ -157,22 +157,33 @@
 
 
   /* pageSwitch */
-  let pageSwitch = true;
+  let pageSwitch = 'page_1';
+  // pageSwitch 에 문자열 'page_1' 대입
 
-  if(pageSwitch === true) {
+  if(pageSwitch === 'page_1') {
+    // 만약 변수 pageSwitch 와 'page_1' 이 엄격하게 동일하면 { } 실행
     button.addEventListener('click', function( ){
-      pageSwitch = false;
+      // 변수 button 을 클릭하면 { } 실행
+      pageSwitch = 'page_2';
+      // 변수 pageSwitch 를 'page_2' 로 값을 변경
       pageOne.style.display = 'none';
       pageTwo.style.display = 'flex';
-
+  
       pageTwoTagP.addEventListener('click', function( ){
-        if(pageSwitch === false) {
-          pageSwitch = true;
+        // 변수 pageTwoTagP 를 클릭하면 { } 실행
+        if(pageSwitch === 'page_2') {
+          // 만약 변수 pageSwitch 와 'page_2' 이 엄격하게 동일하면 { } 실행
+          pageSwitch = 'page_3';
+          // 변수 pageSwitch 를 'page_3' 로 값을 변경
           pageTwo.style.display = 'none';
           pageThree.style.display = 'flex';
 
           pageThreeTagP.addEventListener('click', function( ){
-            if(pageSwitch === true) {
+            // 변수 pageThreeTagP 를 글릭하면 { } 실행
+            if(pageSwitch === 'page_3') {
+              // 만약 변수 pageSwitch 와 'page_3' 이 엄격하게 동일하면 { } 실행
+              pageSwitch = 'page_1';
+              // 변수 pageSwitch 를 'page_1' 로 값을 변경
               pageThree.style.display = 'none';
               pageOne.style.display = 'flex';
             }            
