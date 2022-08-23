@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  
+
+</body>
+
+<script>
+
+  /* body */
+  const body = window.document.body;
+  console.log(body);
+  // console.dir(body);
+
+  /* body style */
+  body.style.margin = '0';
+  body.style.padding = '0';
+  body.style.boxSizing = '0';
+
+
+  /* #root */
+  const root = document.createElement('div');
+
+  document.body.appendChild(root);
+  root.setAttribute('id', 'root');
+
+  console.log(root);
+
+  /* #root style */
+  root.style.width = '100vw';
+  root.style.height = '100vh';
+
+
+  /* #page-one */
+  const pageOne = document.createElement('div');
+
+  root.appendChild(pageOne);
+  pageOne.setAttribute('id', 'page-one');
+
+  console.log(pageOne);
+
+  /* #page-one style */
+  pageOne.style.position = 'absolute';
+  pageOne.style.width = 'inherit';
+  pageOne.style.height = 'inherit';
+  pageOne.style.display = 'flex';
+  pageOne.style.justifyContent = 'center';
+  pageOne.style.alignItems = 'center';
+
+
+  /* page-one > button */
+  let button = document.createElement('button');
+
+  pageOne.appendChild(button);
+  button.setAttribute('class', 'button');
+
+  console.log(button);
+
+  /* page-one > button > click(textnode) */
+  let click = document.createTextNode('click');
+
+  button.appendChild(click);
+
+  console.log(click);
+
+  /* button style */
+  button.style.width = '73px';
+  button.style.height = '73px';
+  button.style.backgroundColor = '#333';
+  button.style.border = 'none';
+  button.style.borderRadius = '93.5px';
+  button.style.fontSize = '24px';
+  button.style.color = '#fff';
+  button.style.fontWeight = '400';
+  // button.style.lineHeight = '29px';
+  // button.style.fontFamily = 'Inter';
+  // button.style.fontStyle = 'normal';
+
+
+  /* page-two */
+  const pageTwo = document.createElement('div');
+
+  root.appendChild(pageTwo);
+  pageTwo.setAttribute('id', 'page-two');
+
+  console.log(pageTwo);
+
+  /* page-two > p */
+  let pageTwoTagP = document.createElement('p');
+
+  pageTwo.appendChild(pageTwoTagP);
+  
+  console.log(pageTwoTagP);
+
+  /* page-two > p > textnode */
+  let pageTwoTagP_textNode = document.createTextNode('If all you have a hammer, everything looks like a nail');
+
+  pageTwoTagP.appendChild(pageTwoTagP_textNode);
+  // console.log(pageTwoTagP_textNode);
+
+  /* #page-two style */
+  pageTwo.style.position = 'absolute';
+  pageTwo.style.width = 'inherit';
+  pageTwo.style.height = 'inherit';
+  pageTwo.style.fontSize = '32px';
+  pageTwo.style.color = '#333';
+  pageTwo.style.fontWeight = '400';
+  pageTwo.style.display = 'none';
+  pageTwo.style.justifyContent = 'center';
+  pageTwo.style.alignItems = 'center';
+  // pageTwo.style.lineHeight = '39px';
+  // pageTwo.style.fontFamily = 'Inter';
+  // pageTwo.style.fontStyle = 'normal';
+
+
+  /* page-three */
+  const pageThree = document.createElement('div');
+
+  root.appendChild(pageThree);
+  pageThree.setAttribute('id', 'page-three');
+
+  console.log(pageThree);
+
+  /* page-three > p */
+  let pageThreeTagP = document.createElement('p');
+
+  pageThree.appendChild(pageThreeTagP);
+
+  console.log(pageThreeTagP);
+
+  /* page-three > p > textnode */
+  let pageThreeTagP_textNode = document.createTextNode('가진 것이 망치뿐이면, 모든 것이 못으로 보인다.');
+
+  pageThreeTagP.appendChild(pageThreeTagP_textNode);
+  // console.log(pageThreeTagP_textNode);
+
+  /* #page-three style */
+  pageThree.style.position = 'absolute';
+  pageThree.style.width = 'inherit';
+  pageThree.style.height = 'inherit';
+  pageThree.style.fontSize = '32px';
+  pageThree.style.color = '#333';
+  pageThree.style.fontWeight = '400';
+  pageThree.style.display = 'none';
+  pageThree.style.justifyContent = 'center';
+  pageThree.style.alignItems = 'center';
+  // pageThree.style.lineHeight = '39px';
+  // pageThree.style.fontFamily = 'Inter';
+  // pageThree.style.fontStyle = 'normal';
+
+
+  /* pageSwitch */
+  let pageSwitch = true;
+
+  if(pageSwitch === true) {
+    button.addEventListener('click', function( ){
+      pageSwitch = false;
+      pageOne.style.display = 'none';
+      pageTwo.style.display = 'flex';
+
+      pageTwoTagP.addEventListener('click', function( ){
+        if(pageSwitch === false) {
+          pageSwitch = true;
+          pageTwo.style.display = 'none';
+          pageThree.style.display = 'flex';
+
+          pageThreeTagP.addEventListener('click', function( ){
+            if(pageSwitch === true) {
+              pageThree.style.display = 'none';
+              pageOne.style.display = 'flex';
+            }            
+          });
+
+        }
+      });
+    
+    });
+  }
+
+
+
+</script>
+
+</html>
