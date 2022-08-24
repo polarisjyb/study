@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    
+    // length 프로퍼티의 값은 같은 배열에 요소를 추가하거나 삭제하면 자동 갱신된다.
+    // 주의할 것은 현재 length 프로퍼티 값보다 큰 숫자 값을 할당하는 경우다.
+    // 이때 length 프로퍼티 값은 변경되지만 실제로 배여르이 길이가 늘어나지는 않는다.
+
+    const arr = [14, 15];
+    
+    // 현재 length 프로퍼티 값인 2보다 작은 숫자 값 3을 length 프로퍼티에 할당
+    arr.length =3;
+
+    // length 프로퍼티 값은 변경되지만 실제로 배열의 길이가 늘어나지는 않는다.
+    console.log(arr.length); // 3
+
+    console.log(arr); // [14, 15, 비어 있음]
+
+    // 위 출력 결과에서 '비어 있음' 은 실제로 추가된 배열의 요소가 아니다.
+    // 즉, arr[2]에는 값이 존재하지 않는다.
+
+
+  </script>
+  
+</body>
+</html>

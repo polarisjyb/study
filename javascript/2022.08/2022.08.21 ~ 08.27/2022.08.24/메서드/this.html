@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+
+  </div>
+
+  <script>
+
+    let doc = {
+      root: document.getElementById('root')
+    }
+
+    doc.root.style.width = '100vw';
+    doc.root.style.height = '100vh';
+    doc.root.style.backgroundColor = '#444';
+
+    doc.root.addEventListener('click', function() {
+      console.log(this);
+      // 여기서 this는 doc.root 이란 객체를 가리키고 있다.
+      this.style.backgroundColor = 'crimson';
+      console.log('크림슨');
+    });
+
+
+
+  </script>
+</body>
+</html>

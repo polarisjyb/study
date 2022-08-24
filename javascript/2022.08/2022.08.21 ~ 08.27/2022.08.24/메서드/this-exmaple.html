@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="root">
+
+  </div>
+
+  <script>
+
+    const domInit = {
+      root: document.getElementById('root')
+    }
+    // 여러개를 식별할 객체를 만들어 분류했다.
+
+    const domStyling = {
+      size: function (element, widthValue, heightValue) {
+        element.style.width = widthValue;
+        element.style.height = heightValue;
+      },
+      bgColor: function (element, backgroundColor) {
+        console.log(this);
+        // 여기서 this는 메서드를 묶어놓은 domStyling 이란 객체를 가리키고 있다.
+        element.style.backgroundColor = backgroundColor;
+      }
+    }
+    // DOM 스타일링 하는 여러가지 함수를 넣을 예정으로 가정하고,
+    // 하나의 기억하고 관리하기 쉽도록 객체에 '메서드화' 하였다.
+
+    domStyling.size(domInit.root, '100vw', '100vh');
+    domStyling.bgColor(domInit.root, '#444');
+
+    console.log(domStyling.size);
+    console.log(domStyling.bgColor);
+
+  </script>
+
+</body>
+</html>
