@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    
+    function soo() {
+      let x = 'rock';
+      console.log(x); // rock
+      return x;
+    }
+
+    soo();
+    console.log(x); // Uncaught ReferenceError: x is not defined
+
+
+      // 함수 내부에서 선언된 지역 변수는 함수가 호출되면 생성되고 함수가 종료하면 소멸한다.
+
+      // 지역 변수 x는 foo 함수가 호출되기 이전까지는 생성되지 않는다.
+      // foor 함수를 호출하지 않으면 함수 내부의 변수 선언문이 실행되지 않기 떄문이다.
+
+      // 따라서 함수 내부에서 선언된 지역 변수 x는 foor가 호출되어 실행되는 동안에만 유효하다.
+
+      // 즉, 지역 변수의 생명 주기는 함수의 생명 주기와 일치한다.
+
+
+      /* 
+        함수 몸체 내부에서 선언된 지역 변수의 생명 주기는 함수의 생명 주기와 대부분 일치하지만
+        지역 변수가 함수보다 오래 생존하는 경우도 있다.
+
+        함수 내부에서 선언된 지역 변수는 함수가 생성한 스코프에 등록된다.
+
+        함수가 생성한 스코프는 렉시컬 환경이라 부르는 물리적인 실체가 있다고 했다.
+
+        따라서 변수는 자신이 등록된 스코프가 소멸(메모리 해제) 될 때 까지 유요하다.
+
+        즉, 누군가 스코프를 참조하고 있으면 스코프는 소멸하지 않고 생존하게 된다.
+      */
+
+      let g = 'global';
+
+      function goo() {
+        console.log(g);
+        let g = 'gglobal';
+      }
+
+
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!--
+    
+  Q-1 사장 요청 : API가 무엇을 지원하는지 알아내 와!
+
+  Q-2 옆에서 거드는 프론트엔드 사수 : 이거 HTML로 랜더링 시켜놔
+
+  Q-3 무엇이든지 통계부터 내는 백엔드 사수 : 이거 API 키 프로퍼티 몇개인지 세어볼래?
+
+  -->
+
+  
+
+
+  <script>
+    /*
+      const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/258`;
+      const request = new XMLHttpRequest();
+      request.open("GET", _BASIC_URL);
+      request.responseType = "json";
+      request.send();
+      request.addEventListener('load', () => {
+        const mudkip = request.response;
+        // 상수 _POKEMON_API 데이터가 사장놈이 가져온 데이터이다.
+        console.log(mudkip);
+        console.log(mudkip.abilities);
+        console.log(mudkip.abilities[0]);
+        console.log(mudkip.abilities[0].ability);
+        console.log(mudkip.abilities[0].ability.name);
+
+
+        if(mudkip.abilities[0].ability.name === 'torrent') {
+          console.log('mudkip의 첫번째 기술 이름은 torrent 입니다.');
+        } 
+
+      }); */
+
+
+      /* 디지몬 API를 가져와서 HTML 문서를 동적으로 생성하고 문서 안에 디지몬 API의 name을 대입하는 작업 */
+
+      const DIGIMON_BASIC_URL = `https://digimon-api.vercel.app/api/digimon`;
+      const D_request = new XMLHttpRequest();
+        D_request.open('GET', DIGIMON_BASIC_URL);
+        D_request.responseType = 'json';
+        D_request.send();
+        D_request.addEventListener('load', () => {
+          const digimon = D_request.response;
+
+          console.log(digimon);
+          console.dir(digimon);
+          
+          console.log(digimon.length);  //  209
+
+          console.log(digimon[0].name); //  koromon
+
+          console.log(digimon[0]);
+
+          const body = window.document.body;
+          // console.log(body);
+
+          const root = document.createElement('div');
+          document.body.appendChild(root);
+
+          root.setAttribute('id', 'root');
+
+          // console.log(root);
+          console.dir(root);
+          
+          
+          for(let i = 0; i < digimon.length; i++) {
+            const digimonDiv = document.createElement('div');
+
+            root.appendChild(digimonDiv);
+
+            digimonDiv.style.height = '100px';
+
+            digimonDiv.style.backgroundColor = 'cadetblue';
+            digimonDiv.style.display = 'flex';
+            digimonDiv.style.justifyContent = 'center';
+            digimonDiv.style.alignItems = 'center';
+          
+
+            const digimonDivTextNode = document.createTextNode(digimon[0].name);
+            digimonDiv.appendChild(digimonDivTextNode);
+            // console.log(digimonDiv);
+            // console.log(digimonDiv.textContent);
+            
+            console.dir(digimonDiv);
+            // console.log(digimon[i].name);
+            // console.log(digimonDiv[i]);
+
+            if(digimon[i].length === digimonDiv[i]) {
+              digimonDiv.innerHTML = digimon[i].name;
+            }
+          }
+
+        })
+
+          /* 처음에 작성했었던 코드 ( 막혔던 부분 ) */
+
+          // if(digimon.length === digimonDiv.length) {
+          //   for (let i = 0; i < digimonDiv.length; i++) {
+          //     digimonDiv[i].textContent = digimon[i].innerHTML
+          //   }
+          // } 
+
+
+          // for(let i = 0; i < digimon.length; i++) {
+          //   const digimonDiv = document.createElement('div');
+
+          //   root.appendChild(digimonDiv);
+            
+          //   console.log(digimonDiv[0]);
+          //   console.log(root.children[0].innerHTML);
+
+          //   if(digimon.length === digimonDiv.length) {
+              
+          //   }
+          // }
+      
+  </script>
+</body>
+</html>
