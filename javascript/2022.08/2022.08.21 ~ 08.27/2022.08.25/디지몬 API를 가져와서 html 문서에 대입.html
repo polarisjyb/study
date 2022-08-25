@@ -22,7 +22,7 @@
 
 
   <script>
-    /*
+    /* 포켓몬 API
       const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon/258`;
       const request = new XMLHttpRequest();
       request.open("GET", _BASIC_URL);
@@ -62,7 +62,7 @@
 
           console.log(digimon[0].name); //  koromon
 
-          console.log(digimon[0]);
+          console.log(digimon[0]);  // koromon의 데이터
 
           const body = window.document.body;
           // console.log(body);
@@ -81,13 +81,27 @@
 
             root.appendChild(digimonDiv);
 
-            digimonDiv.style.height = '100px';
+            /* function ( flexSetting ) */
+            function flexSetting(element, display, justifyContent, alignItems) {
+              element.style.display = display;
+              element.style.justifyContent = justifyContent;
+              element.style.alignItems = alignItems;
+            }
+            flexSetting(digimonDiv, 'flex', 'center', 'center');
+            // digimonDiv.style.display = 'flex';
+            // digimonDiv.style.justifyContent = 'center';
+            // digimonDiv.style.alignItems = 'center';
 
-            digimonDiv.style.backgroundColor = 'cadetblue';
-            digimonDiv.style.display = 'flex';
-            digimonDiv.style.justifyContent = 'center';
-            digimonDiv.style.alignItems = 'center';
-          
+            function widthHeightBackgroundColor(element, width, height, backgroundColor) {
+              element.style.width = width;
+              element.style.height = height;
+              element.style.backgroundColor = backgroundColor;
+            }        
+            widthHeightBackgroundColor(digimonDiv, '', '100px', 'cadetblue');
+            
+            // digimonDiv.style.height = '100px';
+            // digimonDiv.style.backgroundColor = 'cadetblue';
+
 
             const digimonDivTextNode = document.createTextNode(digimon[0].name);
             digimonDiv.appendChild(digimonDivTextNode);
@@ -98,7 +112,9 @@
             // console.log(digimon[i].name);
             // console.log(digimonDiv[i]);
 
-            if(digimon[i].length === digimonDiv[i]) {
+            // console.log(digimon.length);
+
+            if(digimon[i].length === digimonDiv.length) {
               digimonDiv.innerHTML = digimon[i].name;
             }
           }
