@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    // indexOf 메서드는 원본 배열에서 인수로 전달된 요소를 검색하여 인덱스를 반환한다.
+    // 원본 배열에 인수로 전달한 요소와 중복되는 요소가 여러 개 있다면 첫 번째로 검색된 요소의 인덱스를 반환한다.
+    // 원본 배열에 인수로 전달안 요소가 존재하지 않으면 -1 을 반환한다.
+
+    const arr = [1, 2, 2, 3, 3];
+  
+    // 배열 arr 에서 요소 2를 검색하여 첫 번째로 검색된 요소의 인덱스를 반환한다.
+    console.log(arr.indexOf(2)); // 1
+
+    // 배열 arr 에 요소 4가 없으므로 -1 을 반환한다.
+    console.log(arr.indexOf(4)); // -1
+
+    // 두 번째 인수는 검색을 시작할 인덱스다.
+    // 즉, 3번째의 인덱스 부터 요소 3을 검색하여 인덱스를 반환한다.
+    // 두 번째 인수를 생략하면 처음부터 검색한다.
+    console.log(arr.indexOf(3, 3)); // 3
+
+
+    /* indexOf 메서드는 배열에 특정 요소가 존재하는지 확인할 때 유용하다. */
+
+    const number = ['one', 'two', 'three'];
+
+    // number 배열에 'four' 요소가 존재하는지 확인한다.
+    if(number.indexOf('four') === -1) {
+      // number 배열에 'four' 요소가 존재하지 않으면 'four' 요소를 추가한다.
+      number.push('four');
+    }
+
+    // push 메서드는 원본 배열을 직접 변경하는 부수 효과가 있다.
+    console.log(number);  // ['one', 'two', 'three', 'four'];
+
+
+    /* indexOf 메서드 대신 ES7에서 도입된 Array.prototype.includes 메서드를 사용하면 가독성이 더 좋다. */
+
+    // number 배열에 'five' 요소가 존재하는지 확인한다.
+    if(!number.includes('five')) {
+      // number 배열에 'five' 요소가 존재하지 않으면 'five' 요소를 추가한다.
+      number.push('five');
+    }
+
+    console.log(number); // ['one', 'two', 'three', 'four', 'five'];
+
+    
+    // lastIndexOf 메서드는 인수로 전달된 요소와 일치하는 부분을 fromIndex 로부터
+    // 역순으로 탐색하여, 최초로 마주치는 index를 반환한다.
+
+    // 일치하는 부분을 찾을 수 없으면 -1을 반환한다.
+
+    
+    // indexOf는 처음 발견되는 문자열에 대한 index를 반환하는 반면에
+    // lastIndexOf 메서드는 마지막 문자열의 index를 반환한다.
+  
+    console.log('canal'.lastIndexOf('a'));  //  3
+
+    console.log('canal'.lastIndexOf('a', 2)); //  1
+
+    // 'number' 라는 문자열에 'a' 요소가 존재하는지 확인한다.
+    console.log('number'.lastIndexOf('a')); //  -1
+
+    // 'number' 라는 문자열에 'e' 요소가 존재하는지 확인한다.
+    console.log('number'.lastIndexOf('e')); // 4
+
+
+
+    
+    // 다시 학습 필요 (fromIndex에 대한 개념)
+
+    // // 'number' 라는 문자열에 'u' 요소가 존재하는지 확인한다.
+    // console.log('number'.lastIndexOf('u', 0));  // -1
+
+
+
+
+    // var array = [2, 9, 9];
+    //   array.indexOf(2);     // 0
+    //   array.indexOf(7);     // -1
+    //   array.indexOf(9, 2);  // 2
+    //   array.indexOf(2, -1); // -1
+    //   array.indexOf(2, -3); // 0
+
+    // 'canal'.lastIndexOf('a');     //  3 반환
+    // 'canal'.lastIndexOf('a', 2);  //  1 반환
+    // 'canal'.lastIndexOf('a', 0);  // -1 반환
+    // 'canal'.lastIndexOf('x');     // -1 반환
+    // 'canal'.lastIndexOf('c', -5); //  0 반환
+    // 'canal'.lastIndexOf('c', 0);  //  0 반환
+    // 'canal'.lastIndexOf('');      //  5 반환
+    // 'canal'.lastIndexOf('', 2);   //  2 반환
+
+
+
+  </script>
+
+</body>
+</html>
