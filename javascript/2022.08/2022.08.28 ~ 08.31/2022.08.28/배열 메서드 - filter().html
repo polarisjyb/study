@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    /*
+      filter() 메서드는 자신을 호출한 배열의 모든 요소를 순회하면서
+      인수로 전달받은 콜백 함수를 반복 호출한다. 그리고 콜백 함수의 반환값이 true인 모든 요소를 모아 새로운 배열로 반환한다.
+      원본 배열은 변경되지 않는다.
+    */
+
+    const words = ['limit', 'prototype', 'filter', 'array'];
+
+    // filter 메서드는 words 배열의 모든 요소를 순외하면서 콜백 함수를 반복 호출한다.
+    const result = words.filter(word => word.length > 5);
+
+    // 그리고 콜백 함수의 반환값이 true인 요소로만 구성된 새로운 배열을 반환한다.
+    console.log(result);  // ['prototype', 'filter'];
+    
+    // 원본 배열은 변경되지 않는다.
+    console.log(words); //  ['limit', 'prototype', 'filter', 'array']
+
+
+    const guys = [
+        { name: 'YD', money: 500000 },
+        { name: 'Bill', money: 400000 },
+        { name: 'Andy', money: 300000 },
+        { name: 'Roky', money: 200000 }
+    ];
+
+    const rich = guys.filter(man => man.money > 300000);
+
+    console.log(rich);  // [{name: 'YD', money: 500000}, {name: 'bill', money: 400000}]
+
+    /*
+      forEach, map 메서드와 마찬가지로 filter 메서드는 자신을 호출한 배열의 모든 요소를 순회하면서 인수로 전달받은 콜백 함수를 반복 호출합니다.
+      forEach 메서드는 언제나 undefined를 반환하고, map 메서드는 콜백 함수의 반환값들로 구성된 새로운 배열을 반환하지만
+      filter 메서드는 콜백 함수의 반환값이 true인 요소만 추출한 새로운 배열을 반환합니다.
+
+      filter 메서드는 자신을 호출한 배열에서 필터링 조건을 만족하는 특정 요소만 추출하여 새로운 배열을 만들고 싶을 때 사용합니다.
+
+      filter 메서드는 객체를 직접 사용하거나 변형시키지 않지만 콜백 함수를 통해 수정할 수 있으며 이는 문제를 발생시키는 원인이 됩니다.
+      콜백 함수가 호출되는 범위는 콜백 함수가 처음 호출되기 이전이며, filter 메서드는 순회하는 도중에 추가된 요소는 접근하지 않습니다.
+      반대로 순회하는 도중 수정이 일어나면 변경된 값이 콜백 함수에 전달되고 삭제된 요소는 접근하지 않습니다.
+    */
+
+    // array 요소가 추가되는 경우
+    const num = [1, 2, 3, 4, 5];
+
+    const numResult = num.filter(number => {
+        num.push(number);
+        return number > 3;
+    });
+
+    console.log(num); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+
+    console.log(numResult); // [4, 5]
+
+    // array 요소가 수정되는 경우
+    const numbers = [1, 2, 3, 4, 5];
+
+    const numbersResult = numbers.filter(number => {
+        numbers.pop();
+        return number > 3;
+    });
+
+    console.log(numbersResult); // []
+
+    console.log(numbers); // [1, 2]
+
+
+  </script>
+
+  
+</body>
+</html>
