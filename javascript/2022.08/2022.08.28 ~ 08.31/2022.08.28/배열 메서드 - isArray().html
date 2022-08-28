@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+    /* Array.isArray() 메서드는 인자가 Array 인지 판별합니다. */
+
+    Array.isArray([1, 2, 3]); 
+    console.log( Array.isArray([1, 2, 3]) );  // true
+
+    Array.isArray([]); // true
+    // console.log(Array.isArray([]));
+
+    Array.isArray(new Array()); // true
+    // console.log(Array.isArray(new Array()))
+
+    Array.isArray('string'); 
+    console.log(Array.isArray('string'));  // flase
+
+    Array.isArray(undefined); // flase
+    Array.isArray(null);  // flase
+    Array.isArray(1); // flase
+    Array.isArray(true);  // flase
+    Array.isArray(false); // flase
+
+  </script>
+
+</body>
+</html>
