@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const docInit = {
+      body: document.body,
+      root: document.getElementById('root'),
+      centerDiv: document.createElement('div'),
+      arrowDiv: document.createElement('div'),
+      slideContainer: document.createElement('div'),
+      leftDiv: document.createElement('div'),
+      rightDiv: document.createElement('div'),
+
+
+      // 카드 div ==> for문으로 제작하기
+      cardDiv: document.createElement('div'),
+      cardDivOne: document.createElement('div'),
+      cardDivTwo: document.createElement('div'),
+      cardDivThree: document.createElement('div'),
+      cardDivFour: document.createElement('div'),
+      cardDivFive: document.createElement('div'),
+      cardDivSix: document.createElement('div'),
+
+      // 단일 카드 내부 div들
+      // 카드 위 이미지 부분
+      cardTopDiv: document.createElement('div'),
+      numberDiv: document.createElement('div'),
+      // 카드 아래 텍스트 부분
+      cardBottomDiv: document.createElement('div'),
+      pokemonDivBox: document.createElement('div'),
+      pokemonDiv: document.createElement('div'),
+      textDiv: document.createElement('div'),
+      underLineDiv: document.createElement('div')
+    }
+
+    const domStyling = {
+      size: function(element, width, height){
+        element.style.width = width;      
+        element.style.height = height;      
+      },
+      bgColor: function(element, backgroundColor) {
+        element.style.backgroundColor = backgroundColor;
+      },
+      flexSetting: function(element, display, justifyContent, alignItems) {
+        element.style.display = display;
+        element.style.justifyContent = justifyContent;
+        element.style.alignItems = alignItems;
+      },
+      positionSetting: function(element, position, bottom, left) {
+        element.style.position = position;
+        element.style.bottom = bottom;
+        element.style.left = left;
+      },
+      arrowFontSize: function(element, fontSize, fontWeight, color){
+        element.style.fontSize = fontSize;
+        element.style.fontWeight = fontWeight;
+        element.style.color = color;
+      },
+      pokemonFontSize: function(element, fontSize, fontWeight, color){
+        element.style.fontSize = fontSize;
+        element.style.fontWeight = fontWeight;
+        element.style.color = color;
+      },
+      textFontSize: function(element, fontSize, fontWeight, color){
+        element.style.fontSize = fontSize;
+        element.style.fontWeight = fontWeight;
+        element.style.color = color;
+      },
+      flexWebkit: function(element){
+        element.style.display = '-webkit-box'
+        element.style.overflow = 'hidden'
+      }
+    }
+    
+    domStyling.size(docInit.root, '100vw', '100vh');
+    domStyling.bgColor(docInit.root, '');
+    domStyling.flexSetting(docInit.root, 'flex', 'center', 'center');
+
+    // 중앙 정렬 div
+    docInit.root.append(docInit.centerDiv)
+    domStyling.size(docInit.centerDiv, '80vw', '40vh');
+    // domStyling.bgColor(docInit.centerDiv, 'greenyellow')
+
+    // arrow div
+    docInit.centerDiv.append(docInit.arrowDiv)
+    docInit.arrowDiv.id = 'arrow'
+    domStyling.size(docInit.arrowDiv, '70vw', '40vh');
+    domStyling.flexSetting(docInit.arrowDiv, 'flex', 'space-between', 'center')
+    docInit.arrowDiv.append(docInit.leftDiv)
+    docInit.arrowDiv.append(docInit.rightDiv)
+    docInit.leftDiv.textContent = '<'
+    docInit.rightDiv.textContent = '>'
+    domStyling.arrowFontSize(docInit.leftDiv, '2rem', '500', 'grey');
+    domStyling.arrowFontSize(docInit.rightDiv, '2rem', '500', 'grey');
+    domStyling.positionSetting(docInit.arrowDiv, 'absolute', '28vh', '15vw');
+    docInit.arrowDiv.style.zIndex = '1';
+    
+    //cardslide div
+    docInit.centerDiv.append(docInit.slideContainer);
+    domStyling.size(docInit.slideContainer, '80vw', '40vh');
+    docInit.slideContainer.id = 'slideContainer';
+    domStyling.flexSetting(docInit.slideContainer, 'flex', 'space-around', 'flex-start');
+    // docInit.slideContainer.append(docInit.cardDivOne);
+    // docInit.slideContainer.append(docInit.cardDivTwo);
+    // docInit.slideContainer.append(docInit.cardDivThree);
+    // docInit.slideContainer.append(docInit.cardDivFour);
+    // docInit.slideContainer.append(docInit.cardDivFive);
+    // docInit.slideContainer.append(docInit.cardDivSix);
+    // domStyling.size(docInit.cardDivTwo, '10vw', '40vh');
+    // domStyling.bgColor(docInit.cardDivTwo, 'cadetblue');
+
+
+    // const pokemonApiList = {
+    //     ability: ability,
+    //     berry: berry,
+    //     berryFirmness: berryFirmness,
+    //     berryFlavor: berryFlavor,
+    //     characteristic: characterIstic,
+    //     contestEffect: contestEffect,
+    //     contesType: contestType,
+    //     eggGroup: eggGroup,
+    //     encounterCondition: encounterCondition,
+    //     encounterConditionvalue: encounterConditionValue,
+    //     encounterMethod: encounterMethod,
+    //     evolutioChain : evolutioChain,
+    //     evolutiontrigger : evolutionTrigger,
+    //     gender : gender,
+    //     generation : generation,
+    //     growthRate : growthRate,
+    //     item : item,
+    //     itemAttribute : itemAttribute,
+    //     itemCategory : itemCategory,
+    //     itemFlingEffect : itemFlingEffect,
+    //     itemPocket : itemPocket,
+    //     language : language,
+    //     location : location,
+    //     locationArea : locationArea,
+    //     machine :  machine,
+    //     move : move,
+    //     moveAilment : moveAilment,
+    //     moveBattleAtyle : moveBattleAtyle,
+    //     moveCategory : moveCategory ,
+    //     moveDamageClass : moveDamageClass,
+    //     moveLearnMethod : moveLearnMethod,
+    //     moveTarget : moveTarget,
+    //     nature : nature,
+    //     palParkArea : palParkArea,
+    //     pokeathlonStat : pokeathlonStat,
+    //     pokedex : pokedex,
+    //     pokemon : pokemon,
+    //     pokemonColor :  pokemonColor,
+    //     pokemonForm :  pokemonForm,
+    //     pokemonHabitat :  pokemonHabitat,
+    //     pokemonShape :  pokemonShape,
+    //     pokemonSpecies :  pokemonSpecies,
+    //     region : region,
+    //     stat : stat,
+    //     superContestEffect :  superContestEffect,
+    //     type :  type,
+    //     version :  version,
+    //     versionGroup :  versionGroup 
+    //   }
+
+
+      const pkname = []
+
+
+    // 단일 카드 내부 div
+    // 카드 이미지 부분
+    const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
+      const request = new XMLHttpRequest();
+        request.open( GET , _BASIC_URL);
+        request.responseType = "json";
+        request.send();
+        request.addEventListener('load', () => {
+        const _POKEMON_API = request.response;
+        console.log(_POKEMON_API);
+        // console.log(_POKEMON_API.results);
+        // console.log(_POKEMON_API.results.length);
+        const pokemonList = _POKEMON_API.results;
+        console.log(pokemonList);
+
+        for(let i = 0; i < 6 ; i++){
+          let cardDiv = document.createElement('div');
+          // 단일 카드 내부 div들
+          // 카드 위 이미지 부분
+          let cardTopDiv = document.createElement('div');
+          let numberDiv = document.createElement('div');
+          // 카드 아래 텍스트 부분
+          let cardBottomDiv = document.createElement('div');
+          let pokemonDivBox = document.createElement('div');
+          let pokemonDiv = document.createElement('div');
+          let textDiv = document.createElement('div');
+          let underLineDiv = document.createElement('div');
+          let textAlignDiv = document.createElement('div');
+          docInit.slideContainer.append(cardDiv)
+          cardDiv.style.width = '10vw';
+          cardDiv.style.height = '40vh';
+          // cardDiv.style.backgroundColor = 'green';
+          
+          cardDiv.append(cardTopDiv)
+          domStyling.size(cardTopDiv, '10vw', '20vh')
+
+          // const _pokemonForm_URL = `https://pokeapi.co/api/v2/pokemon-form/?offset=0&limit=905`;
+          // const formRequest = new XMLHttpRequest();
+          // formRequest.open("GET", _pokemonForm_URL);
+          // formRequest.responseType = "json";
+          // formRequest.send();
+          // formRequest.addEventListener('load', () => {
+          //   const _POKEMONFORM_API = formRequest.response;
+          //   // 상수 _POKEMON_API 데이터가 사장놈이 가져온 데이터이다.
+          //   console.log(_POKEMONFORM_API);
+          //   console.log(_POKEMONFORM_API.results[0].url)
+          //   cardTopDiv.style.backgroundImage = 'url("' + _POKEMONFORM_API.results[i].url + '")';
+          // });
+          cardTopDiv.style.backgroundImage = `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png)`
+          cardTopDiv.style.backgroundSize = '10vw 20vh'
+          
+          domStyling.bgColor(cardTopDiv,  `rgb( ${new Array(3).fill().map(parameter => Math.random() * 255).join(", ")} )`)
+          domStyling.flexSetting(cardTopDiv, 'flex', 'flex-start', 'flex-end')
+          // cardTopDiv.append(numberDiv);
+          // domStyling.size(numberDiv, '3vw', '3vh')
+          // numberDiv.textContent = 'No.' + (i+1)
+          // numberDiv.style.textAlign = 'center'
+          domStyling.bgColor(numberDiv, '')
+          // 카드 텍스트 부분
+          cardDiv.append(cardBottomDiv)
+          domStyling.size(cardBottomDiv, '10vw', '20vh');
+          // domStyling.bgColor(cardBottomDiv, 'white')
+          // 포켓몬 텍스트 부분
+          cardBottomDiv.append(pokemonDivBox)
+          domStyling.size(pokemonDivBox, '10vw', '5vh');
+          domStyling.bgColor(pokemonDivBox, '');
+          domStyling.flexSetting(pokemonDivBox, 'flex', 'center', 'center');
+          pokemonDivBox.append(pokemonDiv);
+          domStyling.size(pokemonDiv, '3vw', '3vh');
+          domStyling.bgColor(pokemonDiv, '');
+          pokemonDiv.textContent = pokemonList[i].name0;
+          domStyling.flexWebkit(pokemonDiv)
+          domStyling.pokemonFontSize(pokemonDiv, '0.8rem', '100','black')
+          pokemonDiv.append(underLineDiv);
+          domStyling.size(underLineDiv, '2vw', '0.5vh');
+          underLineDiv.style.backgroundColor = `rgb( ${new Array(3).fill().map(parameter => Math.random() * 255).join(", ")} )`;
+          pokemonDiv.style.flexDirection = 'column'
+          domStyling.flexSetting(pokemonDiv, 'flex', 'space-between', 'center')
+          // lorem 텍스트 부분
+          cardBottomDiv.append(textDiv);
+          domStyling.size(textDiv, '10vw', '15vh');
+          domStyling.textFontSize(textDiv, '1rem', '10', 'black')
+          // domStyling.bgColor(textDiv, 'blue');
+          textDiv.append(textAlignDiv)
+          textAlignDiv.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iusto, atque incidunt accusamus ut quasi consequatur tenetur dolorem dolore corporis minima quo esse beatae ipsum. Rerum omnis neque dolorem et!'
+          // textAlignDiv.style.textAlign = 'justify'
+          // textAlignDiv.style.lineHeight = '25px'
+          domStyling.flexWebkit(textDiv)
+
+
+          // 0번째, 5번째 투명도 시도
+          // if(i === 0 || i === 5){
+          //   cardDiv[i].style.backgroundColor = 'red'
+          // }
+          // cardDiv[0].style.backgroundColor = 'red'
+    
+    
+
+
+
+
+          // // 슬라이드 효과 코드
+          // let left = document.getElementById("arrow").children[0];
+          // let right = document.getElementById("arrow").children[1];
+          
+          // console.log(left);
+          // console.log(right);
+    
+          // let slideList = document.querySelector('#slideContainer');
+          // let slideDiv = document.querySelectorAll('#slideContainer > div');
+          // console.log(slideDiv.length);
+    
+    
+          // let slideWidth = "500px";
+          // let slideNumber = slideDiv.length;
+          
+          // let starNum = 0;
+          // let current = 0;
+    
+    
+        
+    
+          // let firstChild = slideList.firstElementChild;
+          // let lastChild = slideList.lastElementChild;
+          // let cloneFirst = firstChild.cloneNode(true);
+          // let cloneLast = lastChild.cloneNode(true);
+    
+          // slideList.appendChild(firstChild);
+          // slideList.insertBefore(cloneLast, slideList.firstElementChild);
+          
+    
+          // right.addEventListener("click",function(){
+    
+          //   if(current <= slideNumber-1){
+    
+              
+          //     slideList.style.transform = "translate3d(500px, 0px ,0px)";
+              
+          //   }
+    
+          //     if (current === slideNumber-1){
+    
+          //       setTimeout(function(){
+          //         slideList.style.transition ="0ms";
+          //         slideList.style.transform = "translate3d(-0px, 0px, 0px)";
+    
+          //       }, 500);  
+          //       current = -1;
+    
+          //     }
+          //     current +=1;
+          // });
+    
+    
+        }
+        docInit.rightDiv.addEventListener('click', function() {
+          console.log(cardDiv)  
+          
+        });
+      })
+      
+
+
+    // docInit.cardDivTwo.append(docInit.cardTopDiv)
+    // domStyling.size(docInit.cardTopDiv, '10vw', '20vh')
+    // domStyling.bgColor(docInit.cardTopDiv, 'pink')
+    // domStyling.flexSetting(docInit.cardTopDiv, 'flex', 'flex-start', 'flex-end')
+    // docInit.cardTopDiv.append(docInit.numberDiv);
+    // domStyling.size(docInit.numberDiv, '3vw', '3vh')
+    // docInit.numberDiv.textContent = 'No.1'
+    // docInit.numberDiv.style.textAlign = 'center'
+    // domStyling.bgColor(docInit.numberDiv, '')
+    // // 카드 텍스트 부분
+    // docInit.cardDivTwo.append(docInit.cardBottomDiv)
+    // domStyling.size(docInit.cardBottomDiv, '10vw', '20vh');
+    // domStyling.bgColor(docInit.cardBottomDiv, 'white')
+    // // 포켓몬 텍스트 부분
+    // docInit.cardBottomDiv.append(docInit.pokemonDivBox)
+    // domStyling.size(docInit.pokemonDivBox, '10vw', '5vh');
+    // domStyling.bgColor(docInit.pokemonDivBox, '');
+    // domStyling.flexSetting(docInit.pokemonDivBox, 'flex', 'center', 'center');
+    // docInit.pokemonDivBox.append(docInit.pokemonDiv);
+    // domStyling.size(docInit.pokemonDiv, '3vw', '3vh');
+    // domStyling.bgColor(docInit.pokemonDiv, '');
+    // docInit.pokemonDiv.textContent = '"포켓몬"';
+    // domStyling.flexWebkit(docInit.pokemonDiv)
+    // domStyling.pokemonFontSize(docInit.pokemonDiv, '0.8rem', '100','black')
+    // docInit.pokemonDiv.append(docInit.underLineDiv);
+    // domStyling.size(docInit.underLineDiv, '2vw', '0.5vh');
+    // docInit.underLineDiv.style.backgroundColor = 'pink'
+    // docInit.pokemonDiv.style.flexDirection = 'column'
+    // domStyling.flexSetting(docInit.pokemonDiv, 'flex', 'space-between', 'center')
+    // // lorem 텍스트 부분
+    // docInit.cardBottomDiv.append(docInit.textDiv);
+    // domStyling.size(docInit.textDiv, '10vw', '15vh');
+    // domStyling.bgColor(docInit.textDiv, 'blue');
+    // docInit.textDiv.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iusto, atque incidunt accusamus ut quasi consequatur tenetur dolorem dolore corporis minima quo esse beatae ipsum. Rerum omnis neque dolorem et!'
+    // domStyling.flexWebkit(docInit.textDiv)
+
+
+
+
+
+
+
+
+
+
+
+
+    // API 코드
+      // const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
+      // const request = new XMLHttpRequest();
+      //   request.open("GET", _BASIC_URL);
+      //   request.responseType = "json";
+      //   request.send();
+      //   request.addEventListener('load', () => {
+      //   const _POKEMON_API = request.response;
+        // 상수 _POKEMON_API 데이터
+
+    //     console.log(_POKEMON_API);
+    //     // console.log(_POKEMON_API.results);
+    //     console.log(_POKEMON_API.results.length);
+
+    //     const pokmonList = _POKEMON_API.results;
+    //     console.log(pokmonList);
+
+    //     const docInit = {
+    //       body: document.body,
+    //       root: document.getElementById('root'),
+    //       centerDiv: document.createElement('div'),
+    //       arrow: document.createElement('div'),
+    //       leftDiv: document.createElement('div'),
+    //       rightDiv: document.createElement('div'),
+    //       slideContainer: document.createElement('div'),
+    //     }
+
+    //     const domStyling = {
+    //       size: function(element, width, height){
+    //         element.style.width = width;      
+    //         element.style.height = height;      
+    //       },
+    //       bgColor: function(element, backgroundColor) {
+    //         element.style.backgroundColor = backgroundColor;
+    //       },
+    //       flexSetting: function(element, display, justifyContent, alignItems) {
+    //         element.style.display = display;
+    //         element.style.justifyContent = justifyContent;
+    //         element.style.alignItems = alignItems;
+    //       }
+    //     }
+
+    //     // #root style
+    //     domStyling.size(docInit.root, '100vw', '100vh');
+    //     domStyling.bgColor(docInit.root, '');
+    //     domStyling.flexSetting(docInit.root, 'flex', 'center', 'center'); 
+
+    //     // centerDiv style
+    //     docInit.root.appendChild(docInit.centerDiv);
+        
+    //     // #arrow style
+    //     docInit.arrow.id ='arrow'
+    //     docInit.centerDiv.appendChild(docInit.arrow);
+
+    //     // #arrow > leftDiv style
+    //     docInit.arrow.appendChild(docInit.leftDiv);
+
+    //     // #arrow > rightDiv style
+    //     docInit.arrow.appendChild(docInit.rightDiv);
+
+    //     // #slideContainer style
+    //     docInit.slideContainer.id = 'slideContainer'
+    //     docInit.centerDiv.appendChild(docInit.slideContainer);
+          
+
+    //     // const pokemonList = 
+
+    //     for(let i = 0; i < pokmonList.length; i++) {
+    //       const pokemonCard = document.createElement('div');
+    //       // console.log(pokemonCard.length);
+    //       // console.log(pokemonCard.textContent);
+
+    //       docInit.slideContainer.append(docInit.pokemonCard);
+
+    //       const pokemonCardTextNode = document.createTextNode(pokmonList[0].name);
+    //       pokemonCard.appendChild(pokemonCardTextNode);
+
+    //       // console.log(pokemonCardTextNode);
+
+    //       if(pokmonList[i].length === pokemonCard.length) {
+    //         pokemonCard.innerHTML = pokmonList[i].name;
+    //       }
+
+    //     }
+
+
+      // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 슬라이드 이벤트 코드
+    // let left = document.getElementById("arrow").children[0];
+    // let right = document.getElementById("arrow").children[1];
+    
+    // console.log(left);
+    // console.log(right);
+
+    // let slideList = document.querySelector('#slideContainer');
+    // let slideDiv = document.querySelectorAll('#slideContainer > div');
+    // console.log(slideDiv.length);
+
+
+    // let slideWidth = "500px";
+    // let slideNumber = slideDiv.length;
+    
+    // let starNum = 0;
+    // let current = 0;
+
+
+  
+
+    // let firstChild = slideList.firstElementChild;
+    // let lastChild = slideList.lastElementChild;
+    // let cloneFirst = firstChild.cloneNode(true);
+    // let cloneLast = lastChild.cloneNode(true);
+
+    // slideList.appendChild(firstChild);
+    // slideList.insertBefore(cloneLast, slideList.firstElementChild);
+    
+
+    // right.addEventListener("click",function(){
+
+    //   if(current <= slideNumber-1){
+
+        
+    //     slideList.style.transform = "translate3d(500px, 0px ,0px)";
+        
+    //   }
+
+    //     if (current === slideNumber-1){
+
+    //       setTimeout(function(){
+    //         slideList.style.transition ="0ms";
+    //         slideList.style.transform = "translate3d(-0px, 0px, 0px)";
+
+    //       }, 500);  
+    //       current = -1;
+
+    //     }
+    //     current +=1;
+    // });
+
+
+    
+  </script>
+</body>
+</html>
