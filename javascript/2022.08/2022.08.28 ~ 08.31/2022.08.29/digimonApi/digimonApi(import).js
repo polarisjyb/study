@@ -1,4 +1,7 @@
 
+
+
+
 import nameChange from "./namChange(export).js";
 
 const docInit = {
@@ -14,6 +17,9 @@ const docStyling = {
     element.style.height = height;      
   }
 }
+
+// const digimonList = ['아구몬', '파피몬', '피요몬', '모티몬', '토코몬']
+// console.log(digimonList);
 
 
 docInit.body.appendChild(docInit.root);
