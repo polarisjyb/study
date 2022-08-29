@@ -16,7 +16,7 @@ const docStyling = {
 }
 
 
-docInit.body.append(docInit.root);
+docInit.body.appendChild(docInit.root);
 docInit.root.id = 'root';
 docStyling.size(docInit.root, '100vw', '100vh');
 
@@ -29,6 +29,7 @@ const DIGIMON_BASIC_URL = `https://digimon-api.vercel.app/api/digimon`;
     D_request.addEventListener('load', () => {
       const digimon = D_request.response;
       console.log(digimon);
+
       console.log(digimon.length);
 
       // console.dir(digimon);
@@ -36,10 +37,13 @@ const DIGIMON_BASIC_URL = `https://digimon-api.vercel.app/api/digimon`;
       for(let i = 0; i < digimon.length; i++) {
         
         let digimonDiv = document.createElement('div');
+        let digimonImg = document.createElement('img');
         let digimonDivLv = document.createElement('div');
         
-        docInit.root.append(digimonDiv);
-        docInit.root.append(digimonDivLv);
+        docInit.root.appendChild(digimonDiv);
+        docInit.root.appendChild(digimonImg);
+        docInit.root.appendChild(digimonDivLv);
+        
 
         // console.log(digimonDiv);
         // console.dir(digimonDiv);
@@ -52,21 +56,20 @@ const DIGIMON_BASIC_URL = `https://digimon-api.vercel.app/api/digimon`;
         // digimonDiv.innerHTML = digimon[i].name + '님';
         digimonDivLv.innerHTML = digimon[i].level;
 
-        docStyling.size(digimonDiv, '20vw', '20vh');
+        docStyling.size(digimonDiv, '100px', '20px');
         // digimonDiv.style.width = '20vw';
         // digimonDiv.style.height = '20vh';
 
-        docStyling.size(digimonDivLv, '10vw', '10vh');
+        docStyling.size(digimonDivLv, '100px', '20px');
         // digimonDivLv.style.width = '10vw';
         // digimonDivLv.style.height = '10vh';
 
-        console.dir(digimonDiv);
-        console.log(digimonDivLv);
+        // console.dir(digimonDiv);
+        // console.log(digimonDivLv);
         
-
-        // 전체 이미지를 가져올 경우, 404 error 데이터를 가져올 수 없음.
-        // 위와 같은 이유로 모든 디지몬 이미지를코로몬 이미지로 대체함.
-        digimonDiv.style.backgroundImage = `url(https://digimon.shadowsmith.com/img/koromon.jpg)` ;
+        digimonImg.src = digimon[i].img;
+        digimonImg.style.width = '100px'
+        
         digimonDiv.style.backgroundSize = 'cover';
         digimonDiv.style.backgroundRepeat = 'no-repeat';
 

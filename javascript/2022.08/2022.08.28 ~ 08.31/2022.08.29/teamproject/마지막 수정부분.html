@@ -176,7 +176,7 @@
     // 카드 이미지 부분
     const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
       const request = new XMLHttpRequest();
-        request.open( GET , _BASIC_URL);
+        request.open( 'GET' , _BASIC_URL);
         request.responseType = "json";
         request.send();
         request.addEventListener('load', () => {
@@ -191,7 +191,7 @@
           let cardDiv = document.createElement('div');
           // 단일 카드 내부 div들
           // 카드 위 이미지 부분
-          let cardTopDiv = document.createElement('div');
+          let cardTopDiv = document.createElement('img');
           let numberDiv = document.createElement('div');
           // 카드 아래 텍스트 부분
           let cardBottomDiv = document.createElement('div');
@@ -220,7 +220,9 @@
           //   console.log(_POKEMONFORM_API.results[0].url)
           //   cardTopDiv.style.backgroundImage = 'url("' + _POKEMONFORM_API.results[i].url + '")';
           // });
-          cardTopDiv.style.backgroundImage = `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png)`
+
+          // cardTopDiv.src = pokemonList[i].results[i].url.forms.url.front_default;
+          
           cardTopDiv.style.backgroundSize = '10vw 20vh'
           
           domStyling.bgColor(cardTopDiv,  `rgb( ${new Array(3).fill().map(parameter => Math.random() * 255).join(", ")} )`)
