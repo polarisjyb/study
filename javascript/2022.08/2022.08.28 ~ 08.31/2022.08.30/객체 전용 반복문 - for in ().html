@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+
+
+  // alice 라는 객체 리터럴에 여러가지 (key)들이 정적으로 작성되어 있다.
+  // 일반 명령 방식처럼, 변수 초기화나 조건들을 나열하지 않아서 생소하다.
+  // 객체지향 프로그래밍이나 리액트의 특정 방식에서 상당히 많이 사용하는 편리한 반복문이다.
+
+  const alice = {
+    name: "alice",
+    age: 26,
+    address : "Earth",
+    pet : "cats"
+  }
+
+  for(let key in alice) {
+    console.log(key);
+  }
+
+
+</script>
+
+</body>
+</html>
