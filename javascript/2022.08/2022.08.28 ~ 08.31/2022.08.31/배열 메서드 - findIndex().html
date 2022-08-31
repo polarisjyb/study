@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+
+    /*
+      findIndex 메서드는 자신을 호출한 배열의 요소를 순회하면서 인수로 전달된 콜백 함수를 호출하여
+      반환값이 true인 첫 번째 요소의 인덱스를 반환한다. 콜백 함수의 반환 값이 true인 요소가 존재하지 않거나
+      배열의 길이가 0인 경우 -1을 반환한다.
+      
+      */
+    
+
+    const users = [
+      { id: 1, name: 'Lee' },
+      { id: 2, name: 'Kim' },
+      { id: 2, name: 'Choi' },
+      { id: 4, name: 'Park' },
+    ];
+
+    //  id가 2인 요소의 인덱스를 구한다. (id가 2인 요소의 인덱스는 1, 2 이지만 첫 번째 요소의 인덱스를 반환하므로 출력 값은 1이다.)
+    console.log( users.findIndex(user => user.id === 2) ); // 1
+
+    //  name이 'Park'인 요소의 인덱스를 구한다.
+    console.log( users.findIndex(user => users.name === 'Prak') ); // 3
+
+    // 위와 같이 프로퍼티 키와 프로퍼티 값으로 요소의 인덱스를 구하는 경우 다음과 같이 콜백 함수를 추상화할 수 있다.
+    function pre(key, value) {
+      // key와 value를 기억하는 클로저를 반환
+      return item => item[key] === value;
+    }
+
+    console.log(users.findIndex(pre('id',2))); // 1
+
+    console.log(users.findIndex(pre('name', 'Park'))); // 3
+
+
+  </script>
+
+</body>
+</html>
