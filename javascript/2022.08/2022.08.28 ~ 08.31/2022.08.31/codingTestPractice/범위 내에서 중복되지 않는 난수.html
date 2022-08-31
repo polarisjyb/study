@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+// Question : 1부터 20까지의 범위 중 임의의 숫자 세 개가 있다.
+//     공식(formula) : (x + y + z) / 3
+//     10미만은 10을 포함하지 않는다. 
+// 1. 평균값이 10 미만이면 'under' 라는 메세지를 출력한다.
+// 2. 평균값이 10 이상히면 'over' 라는 메세지를 출력한다.
+
+// Advanced
+// a. 1부터 20까지의 범위 중 임의의 3개의 숫자가 중복되지 않은 난수를 배열, inputData에 담기도록 처리하시오.
+// b. 객체 objectData의 property인 key, "first", "second", "third"에 주문 a를 통해 얻은 데이터를 각각의 키(key)의 값으로 삽입(insert)하시오.
+//     const objectData = { first : 0, second : 0, third: 0};
+// b. objectData에 담긴 세 개의 난수 중 중앙값에 해당하는 값을 출력하시오.
+
+
+    /* flowchart */
+
+    // 1. 
+
+    const inputData = [];
+
+    function randomNumber() {
+      for(let i = 0; i < 3; i++) {
+        const random = Math.floor(Math.random() * 20)+1;
+        if (inputData.indexOf(random) === -1) {
+          inputData.push(random);
+        } else {
+          i--   
+        }
+      }
+    }
+
+    randomNumber();
+
+    console.log(inputData);
+
+
+    // random();
+
+    // console.log(number)
+
+    // const number = [];
+
+    // function numberArray(number) {
+    //   if (typeof number === 'number') {
+    //     this.number = number;
+    //   }
+    // }
+
+    // for(let i = 0; i < 20; i++) {
+    //   number.push(new numberArray(i+1));
+    // }
+
+    // console.log(number);
+
+    // // for (let i = 0; i < 21; i++) {
+      
+    // // }
+
+    
+
+  </script>
+  
+</body>
+</html>

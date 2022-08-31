@@ -54,3 +54,11 @@ for ( let i = 0; i < studentList.length; i ++) {
 console.log(kdtStudentList);
 console.table(kdtStudentList);
 // console.table(studentList)
+
+const number = [];
+
+function Array(number) {
+  for(let i = 0; i < 20; i++) {
+    number.push(i)
+  }
+}
