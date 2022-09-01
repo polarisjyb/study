@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function randomData(minInt, maxInt) {
+      const getRandomValue = Math.random() * (maxInt - minInt + 1) + minInt;
+      return Math.floor(getRandomValue);
+    }
+
+    function getRandomIntArray(count, minInt, maxInt) {
+      const setArray = [];
+
+      let handle = 0;
+      while (handle < count) {
+        let randomvalue = randomData(minInt, maxInt);
+        if(setArray.includes(randomvalue) === false) {
+          setArray.push(randomvalue);
+          handle++;
+        }
+      }
+      setArray.sort((a,b) => a - b);
+      // console.log(setArray);
+      return setArray;
+    }
+
+    const setData = getRandomIntArray(3, 1, 20);
+    console.log(setData);
+
+  </script>
+</body>
+</html>
