@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <!-- <ul>
+      <li>item-1</li>
+      <li>item-2</li>
+      <li>item-3</li>
+      <li>item-4</li>
+      <li>item-5</li>
+    </ul> -->
+  </div>
+
+
+
+  <script>
+
+    const root = document.getElementById('root');
+
+    root.style.width = '500px';
+    root.style.height = '500px';
+    root.style.backgroundColor = 'cadetblue';
+    root.style.display = 'flex';
+    root.style.justifyContent = 'space-evenly';
+    root.style.alignItems = 'center';
+    root.style.flexDirection = 'column'
+
+    const ul = [];
+
+    function ulTag(count, tagName, innerHTML) {
+      for(let i = 0; i < count; i++) {
+        ul.push(`<${tagName}>${innerHTML}-${i+1}</${tagName}>`)
+      }
+    }
+
+    ulTag(5, 'li', 'item')
+
+    // #root의 자식요소로 ul
+
+    root.innerHTML = ul.join("");
+
+    root.innerHTML = `<ul>${ul.join("")}</ul>`
+
+
+
+  </script>
+</body>
+</html>

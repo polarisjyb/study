@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type = "module">
+    const root = document.getElementById('root');
+
+    root.style.width = '500px';
+    root.style.height = '500px';
+    root.style.backgroundColor = 'cadetblue';
+    root.style.display = 'flex';
+    root.style.justifyContent = 'center';
+    root.style.alignItems = 'center';
+    
+    console.dir(root.style)
+
+    const dom = [];
+
+    // dom.forEach(element => {})
+    // for(let i = 0; i < 5; i++) {
+    //   dom.push(`<div id="test-${i+1}">피카츄</div>`);
+    // }
+
+    function Div(count, tagName, attri, textNode) {
+      for(let i = 0; i < 10; i ++) {
+        dom.push(`<${tagName} ${attri}="test-${i+1}">${textNode}</${tagName}>`)
+      }
+    }
+
+    Div(10, 'div', 'class', '디지몬')
+
+    // dom.push(`<div id="test-1">피카츄</div>`);
+    // dom.push(`<div id="test-2">디지몬</div>`);
+    // dom.push(`<div id="test-3">아구몬</div>`);
+    // dom.push(`<div id="test-4">파이리</div>`);
+    // dom.push(`<div id="test-5">꼬부기</div>`);
+    console.log(dom.join(''));
+
+    root.innerHTML = dom.join("");
+
+
+
+
+
+    
+
+  </script>
+</body>
+</html>
