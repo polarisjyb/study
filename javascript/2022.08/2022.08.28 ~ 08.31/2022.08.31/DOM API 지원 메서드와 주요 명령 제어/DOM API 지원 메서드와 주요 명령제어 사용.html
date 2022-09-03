@@ -11,10 +11,10 @@
   
   <script>
 
-  function addElement(tagName, props, parent = document.body, childrenNode = '') {
+  function addElement(tagName, props, parent = document.body, innerHTML = '') {
     if(typeof (props) === 'object' && typeof(tagName) === 'string') {
       let element = document.createElement(tagName);
-      element.innerHTML = childrenNode;
+      element.innerHTML = innerHTML;
       for(const cssValue in props) {
         console.log(cssValue);
         if(cssValue === 'id') {
@@ -24,22 +24,26 @@
         }
       }
       parent.appendChild(element);
-      
+      console.log(props)
     }
   }
 
-  
-
   const root = document.getElementById('root');
+
 
   addElement('section', {
     id: 'deepDive',
     width: '100vw',
-    height: '100vh',
+    height: '100px',
     backgroundColor: '#444',
     margin: '0',
     padding: '0'
   }, root, '모던 자바스크립트');
+
+
+  addElement('header', {
+    id:'header'
+  }, root, 'header');
 
   </script>
 </body>
