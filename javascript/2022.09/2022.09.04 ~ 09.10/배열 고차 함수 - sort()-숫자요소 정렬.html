@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+
+    /*
+      문자열 요소로 이루어진 배열의 정렬은 sort 메서드를 사용해서 오름차순으로 정렬하는 것에 아무런 문제가 없다.
+      하지만 숫자 요소로 이루어진 배열을 정렬할 때는 주의가 필요하다.
+    */
+
+    const number1 = [30, 50, 20, 110, 80, 10];
+
+    number1.sort();
+
+    // 숫자 요소들로 이루어진 배열은 의도한 대로 정렬되지 않는다.
+    console.log(number1); // [10, 110, 20, 30, 50, 80]
+
+    /*
+      숫자 요소를 정렬할 때는 sort 메서드에 정렬 순서를 정의하는 비교 함수를 인수로 전달해야 한다.
+      비교 함수는 양수나 음수 또는 0을 반환해야 한다.
+      비교 함수의 반환값이 0보다 작으면 비교 함수의 첫 번째 인수를 우선하여 정렬하고, 0이면 정렬하지 않으며, 0보다 크면 두 번째 인수를 우선하여 정렬한다.
+    */
+
+    const number2 = [30, 50, 20, 110, 80, 10];
+    
+    // 0 30-30
+    // -20  30-50
+    // 10 30-20
+    // -80  30-110
+    // -50  30-80
+    // 20 30-10
+    
+    // 20 10 0 -20 -50 -80
+    // 10 20 30 50 80 110
+
+    // 첫 번째 인수 a, 두 번째 인수 b 에 number2 안에 들어있는 요소들을 대입하여 정렬 우선 순위를 정한다.
+
+    // 숫자 배열의 오름차순 정렬. 비교 함수의 반환값이 0보다 작으면 a를 우선하여 정렬한다.
+    number2.sort((a, b) => a - b);
+    console.log(number2);
+
+    // 숫자 배열에서 최소/최대값 얻기
+    console.log(number2[0], number2[number2.length - 1]); // 10 100
+
+
+    // 숫자 배열의 내림차순 정렬. 비교 함수의 반환값이 0보다 작으면 b를 우선하여 정렬한다.
+    number2.sort((a, b) => b - a);
+    console.log(number2);
+
+    // 숫자 배열에서 최소/최대값 얻기
+    console.log(number2[number2.length - 1], number2[0]); // 10 100
+
+  </script>
+</body>
+</html>
