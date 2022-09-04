@@ -14,3 +14,4 @@ function first(text, b) {
 }
 
 first('업로드', second);
+first(22);
