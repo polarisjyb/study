@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}/*
+        img{max-width: 100%;}*/
+        body{color: #fff; background: #fff;}
+
+        #root{width: 100%; height: 100%;}
+        .circle{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          width: 400px;
+          height: 400px;}
+        .circle span{
+          position: absolute;
+          left:0; top:0;
+          width: 100%;
+          height: 100%;
+          border:1px solid crimson;
+          animation: planetRotate 5s linear 0s;}
+        .circle span:after {
+          content:'';
+          position: absolute;
+          left:0;
+          top:0;
+          width: 100%;
+          height: 100%;
+          border:1px solid cadetblue;
+          border-radius:50%;
+          animation: planetRotate 5s linear 0s;}
+        .intro{
+          position: absolute;
+          left: 50%;
+          top: 50%; 
+          transform: translate(-50%, -50%);}
+      
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="circle">
+            <span></span>
+        </div>
+        <div class="intro">
+            <h2>Intro</h2>
+        </div>
+    </div>
+
+    <script>
+      const root = document.getElementById('root');
+
+      const circle = document.getElementsByClassName('circle')
+
+      // console.dir(circle[0].children)
+      const circleSpan = circle[0].children
+      // console.log(circleSpan)
+
+
+    </script>
+</body>
+</html>

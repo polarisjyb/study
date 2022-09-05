@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section id="target">
+
+    </section>
+  </div>
+  <script>
+    const targetSection = document.getElementById('target');
+
+    let size = 400;
+    targetSection.style.width = `${size}` + 'px';
+    targetSection.style.height = `${size}` +'px';
+    targetSection.style.backgroundColor = 'cadetblue';
+
+    let b = setInterval(function() {
+      size++;
+      targetSection.style.width = `${size}` + 'px';
+      targetSection.style.height = `${size}` +'px';
+
+      // let targetS = document.createElement('target');
+
+      // targetSection.appendChild(targetS)
+
+      if(size === 500) {
+        targetSection.style.backgroundColor = 'crimson';
+      } else if(size === 600) {
+        clearInterval(b)
+      }
+    }, 200);
+
+    // targetSection.style.backgroundColor = 'salmon';
+    // 기존에 선언된 size 변수 스타일 보다 더 최근에 작성되었기 때문에 배경색은 'salmon'으로 변하게 된다.
+    // 그리고 setInterval은 다르게 동작하기 때문에 배경색이 'salmon'인 상태에서 타이머가 시작하고 사이즈가 500px가 되면
+    // 배경색이 'crimson'으로 변하고 size가 600px 가 되면 타이머 함수를 끝낸다.
+
+  </script>
+</body>
+</html>
