@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}/*
+        img{max-width: 100%;}*/
+        body{color: #fff; background: #fff;}
+
+        #root{width: 100%; height: 100%;}
+        .circle{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          width: 400px;
+          height: 400px;}
+        .circle span {
+          position: absolute;
+          left:0; top:0;
+          width: 100%;
+          height: 100%;
+          border:1px solid crimson;
+          animation: planetRotate 5s linear 0s;}
+        .circle span:after {
+          content:'';
+          position: absolute;
+          left:0;
+          top:0;
+          width: 100%;
+          height: 100%;
+          border:1px solid cadetblue;
+          border-radius:50%;
+          animation: planetRotate 5s linear 0s;}
+        .intro{
+          position: absolute;
+          left: 50%;
+          top: 50%; 
+          transform: translate(-50%, -50%);}
+      
+          /* @keyframes planetRotate {
+            0%{transform: rotate(0) ;}
+            100%{transform: rotate(360deg);}
+          } */
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="circle">
+            <span></span>
+        </div>
+        <div class="intro">
+            <h2>Intro</h2>
+        </div>
+    </div>
+
+    <script>
+      const root = document.getElementById('root');
+
+      const circle = document.getElementsByClassName('circle')
+
+      // console.dir(circle[0].children)
+      const circleSpan = document.getElementsByTagName('span')
+      console.dir(circleSpan[0])
+
+      circleSpan.style.animation = 'planetRotate 5s linear 0s'
+
+      console.log(window.getComputedStyle(circleSpan[0], '::after').animation)
+
+
+      // 돌아가는 애니메이션을 해보려고 했으나 실패
+      // 가상클래스에 스타일 주는 방법이 따로 있는 걸까?
+
+      // window.addEventListener('click', function() {
+      //   circleSpan[0].style.animation = 'planetRotate 5s linear 0s'
+      // });
+
+
+    
+      // circleSpan.style.animation
+
+    </script>
+</body>
+</html>
