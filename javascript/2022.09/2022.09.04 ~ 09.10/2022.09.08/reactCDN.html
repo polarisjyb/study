@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" data-type="module">
+    const root = document.getElementById('root');
+    
+    // let test = '안녕하세요 리액트입니다.';
+    // ReactDOM.render(test, root);
+    // console.dir(ReactDOM)
+
+    function Test() {
+      // 문자열이 아닌 태그를 리턴했다.
+      return (
+        <header>
+          <ul>
+            <li>헛개차</li>
+            <li>헛개차</li>
+            <li>헛개차</li>
+            <li>헛개차</li>
+            <li>헛개차</li>
+            <li>헛개차</li>
+            <li>헛개차</li>
+            <li>헛개차</li>
+            <li>헛개차</li>
+          </ul>
+        </header>
+      );
+    }
+
+    ReactDOM.render(<Test />, root);
+
+
+  </script>
+</body>
+</html>
