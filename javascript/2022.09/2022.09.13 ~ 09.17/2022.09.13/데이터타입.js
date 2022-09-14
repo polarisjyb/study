@@ -24,7 +24,19 @@ const ee = gg;
 
 console.log(ee)
 console.log(gg)
-console.log( ee===gg)
+console.log( ee === gg )
+
+let ac = 'ac';
+let bc = 'ac';
+
+console.log( ac === bc ); // true
+
+let cd = true;
+let dc = true;
+
+console.log( cd === dc ); // true
+
+
 
 const obj1 = { a:1, b:2 };
 const obj2 = { ...obj1 };
@@ -33,6 +45,7 @@ obj2.a = 100;
 
 console.log( obj1 === obj2 ) // false
 console.log( obj1.a ) // 1
+console.log( obj2 ) // { a: 100, b: 2 }
 
 /*
   Reference ( 참조 값 )
@@ -53,67 +66,35 @@ console.log( obj1.a ) // 1
   이것이 변경 가능한 값의 의미이다.
 */
 
-
 let a = [1,2,3];
 let b = [1,2,3];
 
-console.log( b === a ); //  false
+console.log(a);
+console.log(b);
+
+console.log( a === b ); //  false
 
 
+let aa = [1, 2, 3];
+let bb = aa;
+
+bb.push(4);
+
+console.log(aa);  //  [1, 2, 3, 4]
+console.log(bb);  //  [1, 2, 3, 4]
+
+console.log( aa === bb ); // true
 
 
+// 메서드 축약 --> 명령
 
+let e = [2, 3, 4];
+let f = e.map((value) => value);
 
-// let ac = 'ac';
-// let bc = 'ac';
+console.log(e);
+console.log(f);
 
-// console.log( ac === bc ); // true
-
-// let cd = true;
-// let dc = true;
-
-// console.log( cd === dc ); // true
-
-
-// let cc = {
-//   name : 'name',
-//   age : 1
-// }
-
-// let dd = {
-//   name : 'name',
-//   age : 1
-// }
-
-// console.log( cc === dd ); // false
-
-
-
-// let aa = [1, 2, 3];
-// let bb = aa;
-
-// bb.push(4);
-
-// console.log(aa);  //  [1, 2, 3, 4]
-// console.log(bb);  //  [1, 2, 3, 4]
-
-// console.log( aa === bb ); // true
-
-
-// // 참조 데이터 타입 ( 깊은 복사 )
-// // reference data type
-
-// let aaa = [1, 2, 3];
-// let bbb = [1, 2, 3];
-
-// bbb.push(4);
-
-// console.log(aaa); // [1, 2, 3]
-// console.log(bbb); // [1 ,2, 3, 4]
-
-
-// let e = [2, 3, 4];
-// let f = e.map((value) => value);
+console.log( e === f );
 
 // e.map(function(value) {
 //   return value;
@@ -134,8 +115,3 @@ console.log( b === a ); //  false
 //   }
 //   return temp;
 // }
-
-// console.log(e);
-// console.log(f);
-
-// console.log( e === f );
