@@ -75,17 +75,6 @@ console.log(b);
 console.log( a === b ); //  false
 
 
-let aa = [1, 2, 3];
-let bb = aa;
-
-bb.push(4);
-
-console.log(aa);  //  [1, 2, 3, 4]
-console.log(bb);  //  [1, 2, 3, 4]
-
-console.log( aa === bb ); // true
-
-
 // 메서드 축약 --> 명령
 
 let e = [2, 3, 4];

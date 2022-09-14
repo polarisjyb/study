@@ -32,6 +32,17 @@ console.log(person2.name) // 짱짱이
 
 console.log( person1 === person2 ); // true
 
+
+let aa = [1, 2, 3];
+let bb = aa;
+
+bb.push(4);
+
+console.log(aa);  //  [1, 2, 3, 4]
+console.log(bb);  //  [1, 2, 3, 4]
+
+console.log( aa === bb ); // true
+
 /*
   깊은 복사 (Depth copy)
 
@@ -53,8 +64,6 @@ b = 'c';
 console.log(a); // 'a'
 console.log(b); // 'c'
 
-// 참조 데이터 타입 ( 깊은 복사 )
-// reference data type
 
 let aaa = [1, 2, 3];
 let bbb = [1, 2, 3];
@@ -63,3 +72,5 @@ bbb.push(4);
 
 console.log(aaa); // [1, 2, 3]
 console.log(bbb); // [1 ,2, 3, 4]
+
+console.log( aaa === bbb ); // false
