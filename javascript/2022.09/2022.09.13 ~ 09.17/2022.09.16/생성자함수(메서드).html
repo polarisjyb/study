@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    class ElementMaker {
+      constructor (tagName, width, backgroundColor, content = '') {
+        this.tagName = tagName;
+        this.width = width;
+        this.backgroundColor = backgroundColor;
+        this.content = content;
+      }
+
+      // set은 인스턴스가 '곧' 될 tagName의 셋팅을 하는 생성자 함수 전용 키워드 입니다.
+      set tagName(value) {
+        if(typeof value === 'string') { // 매개변수 tagName 자리에 문자열 타입이 아니라면 에러가 발생합니다.
+          return this._tagName = value;
+        }
+      }
+      set width(value) { // 삼항연산자(ternary operator) 방식으로 처리해보기
+        return this._width = Number.isInteger(value) ? value : console.error('need integer');
+      }
+      
+      // get은 '결정이 완료 된' 값을 가져와 가공합니다. 위의 constructor의 필드에 height 값이 정의 되어 있지 않은 것을 확인하고, 동시에 콘솔에 키(key)로 잡혀 있는 것을 확인
+      get height() {
+        return this._width / 2; // setter에서 결정된 _width 키(key)값을 가공하여 height 키로 구성합니다.
+      }
+      makeElement() { // 직접 인스턴스로 양산하는 '메서드' 입니다. 객체의 키로 존재하기 때문에 함수(function)가 아닌 메서드(method)로 부릅니다. --> 객체 프로퍼티에 할당된 함수를 메서드(method) 라고 합니다.
+        return `<${this._tagName} style = 'width:${this._width}px; height:${this.height}px; background-color:${this.backgroundColor}; '>${this.content}</${this._tagName}>`;
+      }
+    }
+
+    const root = document.getElementById('root');
+    const fromConstructFunc = new ElementMaker('div', 300, 'cadetblue', 'hello world');
+    // 생성자 함수에서 인스턴스를 만들어내는 new 키워드를 통해 객체를 하나 찍어냈습니다.
+    console.dir(fromConstructFunc);
+    root.innerHTML = fromConstructFunc.makeElement();
+
+
+
+  </script>
+</body>
+</html>
