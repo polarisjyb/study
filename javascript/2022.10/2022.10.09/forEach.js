@@ -46,3 +46,15 @@ number.forEach((item, index, arr) => {
 });
 
 console.log(number);  // [3, 6, 9]
+
+
+[10, 20, 30].forEach((item, index, arr) => {
+	console.log(`${item} : ${index} : ${arr}`);
+  /*
+    10 : 0 : 10, 20, 30
+    20 : 1 : 10, 20, 30
+    30 : 2 : 10, 20, 30
+  */
+});
+
+  
